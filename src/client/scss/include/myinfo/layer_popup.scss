@@ -1,0 +1,15 @@
+$linebgClr: getColors( 'line-bg' ) ;
+$fontClr: getColors( 'text' ) ;
+$primaryClr: getColors( 'primary' ) ;
+
+.layerPop {
+	background-color: nth( $linebgClr, 8 );
+	.searchBar {
+		.ui-selectmenu-button {
+			width: 102px;
+		}
+		.textFieldWrap {
+			width: 220px;
+		}
+	}
+}

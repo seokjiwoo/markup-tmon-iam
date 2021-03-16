@@ -1,0 +1,60 @@
+.label{
+  $label-line-bg : getColors('line-bg');
+  $label-text : getColors('text');
+  $label-primary : getColors('primary');
+
+  @mixin labelStyle( $style : () ){
+    $defaultStyle : (
+      border-color: #d4d4d4,
+      background-color: #fafafa,
+      color : #8a8a8a ,
+    );
+    $defaultStyle : map-merge( $defaultStyle , $style );
+    @include styleLoop( $defaultStyle );
+  };
+
+  display: inline-flex;
+  justify-content: center; align-items: center;
+  height: 24px; padding: 0 9px; vertical-align: top;
+  box-sizing: border-box; letter-spacing: -0.5px;
+  border:{
+    width: 1px; style: solid;
+    color: transparent; radius: 3px;
+  }
+  @extend .fz-elem3; @extend .fw-bold; font-family: $font-nanum;
+  @include labelStyle;
+  
+  &.gray{ @include labelStyle; }
+  &.blue{ 
+    $style : (
+      border-color: #a2a9eb,
+      background-color: #f7f8ff,
+      color: nth( $label-primary , 2 ) ,
+    );
+    @include labelStyle( $style );
+  };
+  &.red{
+    $style : (
+      border-color: #ef9999,
+      background-color: #fff8f8,
+      color : #e54141 ,
+    );
+    @include labelStyle( $style );
+  };
+  &.orange{
+    $style : (
+      border-color: #f3ab82,
+      background-color: #fff8f8,
+      color: nth( $label-primary , 1 ),
+    );
+    @include labelStyle( $style );
+  };
+  &.green{
+    $style : (
+      border-color: #79c6a9,
+      background-color: #f5fefb,
+      color: #36a77c ,
+    );
+    @include labelStyle( $style );
+  };
+} // end of label

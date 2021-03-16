@@ -1,0 +1,64 @@
+.fw-normal { font-weight: 400 ; }
+.fw-bold { font-weight: 700 ; }
+.fw-extbold { font-weight: 800 ; }
+
+.fz-h1{ font-size:32px ; }
+.fz-h2{ font-size:24px ; }
+.fz-h3{ font-size:20px ; }
+.fz-h4{ font-size:16px ; }
+.fz-h5{ font-size:14px ; }
+.fz-body1{ font-size:16px ; }
+.fz-body2{ font-size:13px ; }
+.fz-elem1{ font-size:15px ; }
+.fz-elem2{ font-size:13px ; }
+.fz-elem3{ font-size:12px ; }
+
+/*
+  공통 색상
+
+  [사용 방법]
+  사용할 색상 리스트를 변수에 저장해서 사용합니다.
+  getColors 함수는 전달 받은 인자의 색상리스트를 불러옵니다.
+
+  $clrs : getColors( 'line-bg' ) ;
+  .box { border: 1px solid nth( $clrs, 2 ) ; }  
+*/
+$colors : (
+  line-bg : #959da6 #b7bfc8 #ccd2d8 #d6dadf #ebedef #f4f4f4 #f8f8f8 #ffffff #16181a,
+  text : #16181a #3d3e48 #7d7e80 #a0a1a8 #6c7580 #fff,
+  primary : #f27935 #3e62da #4a5065 ,
+) ;
+
+/* 
+  공통 텍스트 스타일
+  
+  [사용 방법]
+  @include getTypoStyles( head-18 ) ;
+  getTypoStyles mixin에 적용할 이름을 전달하면 스타일이 적용됩니다.
+*/
+$font-nanum : ( 'Nanum Gothic', dotum, arial, sans-serif ) ;
+$font-dotum : ( dotum, arial, sans-serif ) ;
+
+$typoStyles : (
+  head-28 : ( font-family: $font-nanum , font-weight:700 , font-size: 28px , letter-spacing: -1.12px , line-height: 32px ) , 
+  head-27 : ( font-family: $font-nanum , font-weight:700 , font-size: 27px , letter-spacing: -1.12px , line-height: 31px ) , 
+  head-24 : ( font-family: $font-nanum , font-weight:700 , font-size: 24px , letter-spacing: -1px , line-height: 28px ) , 
+  head-18 : ( font-family: $font-nanum , font-weight:700 , font-size: 18px , letter-spacing: -0.75px , line-height: 21px ) , 
+  title-16 : ( font-size: 16px , letter-spacing: -0.67px , line-height: 19px ) , 
+  title-15 : ( font-family: $font-nanum , font-weight:700 , font-size: 15px , letter-spacing: -0.62px , line-height: 19px ) , 
+  title-14 : ( font-family: $font-nanum , font-weight:700 , font-size: 14px , letter-spacing: -0.58px , line-height: 16px ) , 
+  subtitle-13 : ( font-family: $font-nanum , font-weight:700 , font-size: 13px , letter-spacing: -0.54px , line-height: 15px ) , 
+  body-13 : ( font-family: $font-nanum , font-size: 13px , letter-spacing: -0.54px , line-height: 15px ) , 
+  body-12 : ( font-family: $font-nanum , font-size: 12px , letter-spacing: -0.5px , line-height: 15px ) , 
+  body-13-dotum : ( font-family: $font-dotum , font-size: 13px , letter-spacing: 0px , line-height: 16px ) , 
+  body-12-dotum : ( font-family: $font-dotum , font-size: 12px , letter-spacing: 0px , line-height: 15px ) , 
+) ;
+
+$layoutSize : (
+  wrap-min : 1200px ,
+  wrap-max : 1600px ,
+  header : 70px , 
+  lnb : 200px , 
+  visual-top : 180px ,
+  visual-bottom : 200px ,
+) ;

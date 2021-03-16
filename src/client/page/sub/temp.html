@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내 정보</title>
+</head>
+<body class="sub">
+
+  <div class="wrap">
+    
+    ${ require( '../include/head.html' )()}  
+    
+    <div class="container">
+      
+      ${ require( '../include/visual.html' )()}  
+      
+      <nav class="lnb">
+        ${ require( '../include/menu_default.html' )({ menu1 : 'active' })}
+        ${ require( '../include/menu_toggle.html' )( { visibility : 'show' } )}
+      </nav>
+
+      <main class="contents">
+        <section>
+          <h1>타이틀</h1>
+          
+        </section>
+      </main> <!-- end of contents -->
+    </div> <!-- end of container -->
+
+    ${ require( '../include/foot.html' )()}
+
+  </div> <!-- end of wrap -->
+  
+</body>
+</html>

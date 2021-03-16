@@ -1,0 +1,177 @@
+* {margin:0; padding:0}
+html, body {color:#6773a9; font-size:12px; font-family:consolas, Dutum, "돋움", vardana}
+div.wrap {border:5px solid #1865b3; padding:10px;}
+.folder {color:#ff2e81; font-weight:bold}
+table {margin:0; padding:0; table-layout:fixed; width: 100%; border:1px solid #eee;  border-collapse: collapse;}
+tr {background:#ffffff}
+th {padding: 7px 0 5px 0; color:#6c8cd7; font-size:11px; text-align:center; background:#d4d4d4; border:1px solid #bbb;}
+td {padding: 10px; color:#6c8cd7; font-size:11px;text-align:left; border:1px solid #bbb;}
+td p {
+  line-height: 1.6;
+}
+table td.depthTitle {color:#777777; font-weight:bold; font-size:11px; text-align:left; padding-left:10px}
+table td.etc {color:#393939; text-align:left; padding-left:5px;}
+table td.link{text-align:left; padding-left:7px; color:blue;}
+table td.link a {color:blue;}
+table tr:hover{background-color:#d4d4d4;}
+h2.title {padding:10px 0 15px 0; color:#000000; margin-bottom:8px; font-size:14px; text-align:center}
+p.pageLink {margin:20px 0 10px 0; color:#0019a9;  font-size:11px}
+a {color:#838383; text-decoration:none}
+a:hover {color:#919191; text-decoration:underline}
+dl.list dt {border-bottom: 1px dashed #ccc; font-size: 14px; line-height: 2em; padding: 5px; color: #000; overflow: hidden;}
+dl.list dt button {padding: 2px 5px; margin-left: 20px; width: 180px; cursor: pointer; display: block; float: right; font-family:Dutum, "돋움", vardana}
+dl.list dt span {font-weight: bold; color: #6c8cd7}
+dl.list dd {padding:10px 0;}
+.menu_line td {background:#efefef;}
+.delete {text-decoration:line-through; color:red; font-weight:bold;}
+.delete a{font-weight:normal; color:red !important;}
+.ing td{background:#FFFBC8 ;}
+.del td{background:#FF8606;}
+.end td {background:#ffeaea;}
+.wait td{background-color: #c8e9ec;}
+
+tr.none {
+  display: none;
+}
+
+dt {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.opt {
+  display: flex;
+  flex: 1 1 auto;
+}
+.explain {
+  display: inline-flex;
+  margin-right: 20px;
+  margin-left: auto;
+}
+.explain > * {
+  display: flex;
+  align-items: center;
+  color: #555 !important;
+  font-size: 12px;
+  font-weight: normal !important;
+  margin-left: 10px;
+}
+.explain > *:before {
+  content: '';
+  display: inline-block;
+  width: 6px; height: 6px;
+  margin-right: 6px;
+}
+
+.explain .inProgress:before {
+  background: #999;
+}
+
+.explain .complete:before {
+  background: indianred;
+}
+
+
+
+table.tbl thead tr:nth-child(1) th {
+  position: sticky;
+  top: 0;
+}
+
+table.tbl th {
+  height: 40px;
+  color: #333;
+}
+table.tbl td {
+  height: 40px;
+}
+
+table.tbl th , table.tbl td {
+  border: 1px solid #999;
+}
+table.tbl tr:hover td {
+  background-color: #ffc299;
+}
+
+table.tbl td:nth-child(2) {
+  color: #333;
+  font-weight: 700;
+}
+
+table.tbl td:nth-child(4) {
+  padding: 0;
+}
+table.tbl td a {
+  display: block;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0px 10px;
+  line-height: 1.2;
+}
+
+table.tbl td:nth-child(4) a {
+  color: #333;
+}
+table.tbl td:nth-child(4) a:hover {
+  color: #f60 !important;
+}
+
+.end td {
+  background-color: #fff2ca;
+  color: #63562e;
+}
+
+.end td a {
+/*   color: #ff0 !important;  */
+}
+
+tr.bks td:nth-child(3) {
+  background-color: #feff8a;
+}
+tr.lkh td:nth-child(3) {
+  background-color: #ffb7e6;
+}
+tr.sjw td:nth-child(3) {
+  background-color: #bcd9f3;
+}
+tr.sms td:nth-child(3) {
+  background-color: #ceffbb;
+}
+tr.kkr td:nth-child(3) {
+  background-color: #c3debc;
+}
+tr.pmh td:nth-child(3) {
+  background-color: #ffbbfc;
+}
+tr.kjh td:nth-child(3) {
+  background-color: #feffbb;
+}
+
+tr.inProgress td:not(:nth-child(3)) {
+  background-color: #eee;
+  color: #999 !important;
+}
+
+tr.complete td:not(:nth-child(3)) {
+  background-color: #ccc;
+}
+
+tr.complete td:nth-child(1) {
+  color: indianred;
+}
+
+ul.explainList {
+  margin: 20px 0;
+  font-size: 12px;
+  color: #555;
+}
+
+ul.explainList > li {
+  line-height: 1.4;
+  padding-bottom: 10px;
+}
+
+.workers{
+  width:150px; 
+}

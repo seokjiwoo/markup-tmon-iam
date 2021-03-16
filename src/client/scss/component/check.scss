@@ -1,0 +1,59 @@
+.chkWrap{
+  $widthChk : 24px ; 
+  $heightChk : 24px ; 
+  $clrs-lineBg : append( getColors( 'line-bg' ), #e3e5e8) ; 
+  $clrs-primary : getColors( 'primary' ) ; 
+  $clrs-text : getColors( 'text' ) ; 
+
+  position:relative ; 
+  display: inline-flex ; 
+  align-items: center ; 
+  user-select: none ; 
+  @include getTypoStyles( body-13 ) ;
+  cursor: pointer; 
+  input {
+    position: absolute; left: 0; top: 0; 
+    visibility: hidden; 
+    opacity: 0; 
+    &:disabled {
+      & ~ i { border-color:nth( $clrs-lineBg, 4 ) ; background-color: nth( $clrs-lineBg, 7 ); }
+      & ~ span { color:nth( $clrs-text, 4 ) ; }
+      &:checked ~ i { 
+        background-color: nth( $clrs-lineBg, 4 ); border:1px solid nth( $clrs-lineBg, 4 ) ; 
+        &::after{ border-color:#fff ; }
+      }
+      &:checked ~ span { color:nth( $clrs-text, 4 ) ; }
+    }
+    &:checked {
+      & ~ i {
+        background-color: nth( $clrs-primary, 1 );
+        border:none ; 
+        &::after { display: inline-flex; }
+      }
+    }
+  }
+  i {
+    position:relative ; 
+    display:inline-flex ;
+    width:$widthChk; height:$heightChk; 
+    border:1px solid nth( $clrs-lineBg, 3 ) ; 
+    border-radius:3px ;
+    &::after {
+      content:"" ; 
+      display: none ;
+      width:12px ; height: 6px ; 
+      border-width: 0px 0px 2px 2px ; 
+      border-style: solid ;
+      transform: translate( -50%, -50% ) rotate( -45deg );
+      margin-top: -0.1em;
+      border-color: nth( $clrs-lineBg, 8 ) ; 
+      position: absolute; 
+      left: 50% ; top:50% ; 
+    }
+  }
+  span { color:nth( $clrs-text, 1 ) ; margin-left: 10px ;  }
+  &:hover {
+    i { border-color:nth( $clrs-primary, 1 ) ; }
+    input:not(:disabled):checked ~ i { background-color: #e36f2d ; }
+  }
+}

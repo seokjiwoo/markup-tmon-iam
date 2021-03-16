@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>내 정보</title>
+<script src="../../js/lib/jquery-1.12.4.min.js"></script>
+<script src="../../js/lib/jquery-ui.js"></script>
+</head>
+<body class="sub">
+
+<div class="wrap">
+	
+	${ require( '../include/head.html' )()}  
+	
+	<div class="container">
+		
+		${ require( '../include/visual.html' )()}  
+		
+		<nav class="lnb">
+		${ require( '../include/menu_default.html' )({ menu2 : 'active' })}
+		${ require( '../include/menu_toggle.html' )( { visibility : 'show' } )}
+		</nav>
+
+		<main class="contents">
+			<section>
+				<h1>내 정보</h1>
+				<ul class="tab-round">
+					<li><a href="#;">내 정보</a></li>
+					<li class="active"><a href="#;">내 권한</a></li>
+					<li><a href="#;">내 관리자 권한</a></li>
+					<li><a href="#;">대리 승인자 관리</a></li>
+				</ul>
+				<ul class="tab-sub">
+					<li class="active"><a href="#;">ADMIN</a></li>
+					<li><a href="#;">FNSTAT</a></li>
+					<li><a href="#;">VPN</a></li>
+					<li><a href="#;">IPCC</a></li>
+				</ul>
+				<div class="tblTitle">
+					<div class="r-cont">
+						<label class="chkWrap">
+							<input type="checkbox" checked>
+							<i></i>
+							<span>만료일 일주일 이내 권한 보기</span>
+						</label>
+						<select>
+							<option>전체</option>
+							<option>신청구분</option>
+							<option>권한명</option>
+						</select>
+						<div class="textFieldWrap search hasDel" style="--width:240px;">
+							<input type="text" required="">
+							<label class="placeholder">검색어를 입력해주세요</label>
+							<button type="button" class="btnDel">삭제</button>
+							<button type="button" class="btnSrch">검색</button>
+						</div>
+					</div>
+				</div>
+				<table class="table list">
+					<colgroup>
+						<col style="width:55px;">
+						<col style="width:220px;">
+						<col style="width:auto;">
+						<col style="width:175px;">
+						<col style="width:175px;">
+						<col style="width:175px;">
+					</colgroup>
+					<thead>
+					<tr>
+						<th>
+							<label class="chkWrap">
+								<input type="checkbox" checked>
+								<i></i>
+							</label>
+						</th>
+						<th>신청 구분</th>
+						<th>권한 명</th>
+						<th>시작일</th>
+						<th>만료일</th>
+						<th>만료일 연장 신청</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>
+							<label class="chkWrap">
+								<input type="checkbox" checked>
+								<i></i>
+							</label>
+						</td>
+						<td>어드민별 신청</td>
+						<td class="tleft">MD &gt; 티켓 딜 관리 &gt; 딜 등록</td>
+						<td>2020.03.01</td>
+						<td><span class="org-txt">2020.10.06</span></td>
+						<td>신청</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="chkWrap">
+								<input type="checkbox" checked>
+								<i></i>
+							</label>
+						</td>
+						<td>업무별 신청</td>
+						<td class="tleft">[제안] 티몬관리1 > 재무정보</td>
+						<td>2020.03.01</td>
+						<td><span class="org-txt">2020.10.06</span></td>
+						<td>미신청</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="chkWrap">
+								<input type="checkbox" checked>
+								<i></i>
+							</label>
+						</td>
+						<td>전체 권한 리스트 신청</td>
+						<td class="tleft">MD &gt; 비배송</td>
+						<td>2020.03.01</td>
+						<td><span class="org-txt">2020.10.06</span></td>
+						<td>미신청</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="chkWrap">
+								<input type="checkbox">
+								<i></i>
+							</label>
+						</td>
+						<td>전체 권한 리스트</td>
+						<td class="tleft">[운영/정책기획]공통 권한</td>
+						<td>2020.03.01</td>
+						<td>2020.10.06</td>
+						<td>신청</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="chkWrap">
+								<input type="checkbox">
+								<i></i>
+							</label>
+						</td>
+						<td>어드민별 신청</td>
+						<td class="tleft">MD &gt; 티켓 딜 관리 &gt; 딜 등록</td>
+						<td>2020.03.01</td>
+						<td>2020.10.06</td>
+						<td>신청</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="chkWrap">
+								<input type="checkbox">
+								<i></i>
+							</label>
+						</td>
+						<td>업무별 신청</td>
+						<td class="tleft">[제안] 티몬관리1 > 재무정보</td>
+						<td>2020.03.01</td>
+						<td>2020.10.06</td>
+						<td>미신청</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="chkWrap">
+								<input type="checkbox">
+								<i></i>
+							</label>
+						</td>
+						<td>전체 권한 리스트 신청</td>
+						<td class="tleft">MD &gt; 비배송</td>
+						<td>2020.03.01</td>
+						<td>2020.10.06</td>
+						<td>미신청</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="chkWrap">
+								<input type="checkbox">
+								<i></i>
+							</label>
+						</td>
+						<td>전체 권한 리스트</td>
+						<td class="tleft">[운영/정책기획]공통 권한</td>
+						<td>2020.03.01</td>
+						<td>2020.10.06</td>
+						<td>신청</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="chkWrap">
+								<input type="checkbox">
+								<i></i>
+							</label>
+						</td>
+						<td>어드민별 신청</td>
+						<td class="tleft">MD &gt; 티켓 딜 관리 &gt; 딜 등록</td>
+						<td>2020.03.01</td>
+						<td>2020.10.06</td>
+						<td>신청</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="chkWrap">
+								<input type="checkbox">
+								<i></i>
+							</label>
+						</td>
+						<td>업무별 신청</td>
+						<td class="tleft">[제안] 티몬관리1 > 재무정보</td>
+						<td>2020.03.01</td>
+						<td>2020.10.06</td>
+						<td>미신청</td>
+					</tr>
+					</tbody>
+				</table>
+				<div class="tbl-btm">
+					<div class="l-cont">
+						<button class="btn type1 md">상세보기</button>
+					</div>
+				</div>
+				<div class="pagingWrap">
+					<span class="numPage">
+						<a href="#" class="first">prev jump</a>
+						<a href="#" class="prev">prev</a>
+						<a href="#" class="active">1</a>
+						<a href="#">2</a>
+						<a href="#">3</a>
+						<a href="#">4</a>
+						<a href="#">5</a>
+						<a href="#">6</a>
+						<a href="#">7</a>
+						<a href="#">8</a>
+						<a href="#">9</a>
+						<a href="#">10</a>
+						<a href="#" class="next">next</a>
+						<a href="#" class="end">next jump</a>
+					</span>
+				</div>
+			</section>
+		</main> <!-- end of contents -->
+	</div> <!-- end of container -->
+
+	${ require( '../include/foot.html' )()}
+
+</div> <!-- end of wrap -->
+
+</body>
+</html>

@@ -1,0 +1,300 @@
+<section class="mockup" tabindex="0">
+<input type="checkbox" data-exp="list">
+<ul>
+    <li><a href="#Select">Select</a></li>
+    <li><a href="#Date">Date</a></li>
+    <li><a href="#Checkbox">Checkbox</a></li>
+    <li><a href="#Radio">Radio</a></li>
+    <li><a href="#TextField">TextField</a></li>
+    <li><a href="#Search">Search</a></li>
+    <li><a href="#Textarea">Textarea</a></li>
+</ul>
+<a href="#" class="top">top</a>
+</section>
+
+  <dl id="Select" class="bxSample">
+    <dt>Select</dt>
+    <dd>      
+      <a href="https://app.zeplin.io/project/5e7861ece4d9e2634c2a703a/screen/5e79a7678b52437106e9c3ee" target="_blank" class="exp" >UI COMPONENTS</a>
+      
+      <h3>기본</h3>
+
+      <select>
+        <option>전체</option>
+        <option>신청번호</option>
+        <option>권한 종류</option>
+        <option>권한명</option>
+        <option>상태</option>
+      </select>
+
+      <h3>선택된 값이 있고 옵션에 disabled 상태가 있는 타입</h3>
+
+      <select>
+        <option>전체</option>
+        <option>신청번호</option>
+        <option selected="selected">권한 종류</option>
+        <option disabled>권한명</option>
+        <option>상태</option>
+      </select>
+
+      <h3>Placeholder를 입력한 타입</h3>
+
+      <select data-placeholder="placeholder 입력">
+        <option>전체</option>
+        <option>신청번호</option>
+        <option>권한 종류</option>
+        <option>권한명</option>
+        <option>상태</option>
+      </select>
+
+      <h3>셀렉트 박스가 disabled 상태 인 타입</h3>
+
+      <select disabled>
+        <option>전체</option>
+        <option>신청번호</option>
+        <option>권한 종류</option>
+        <option>권한명</option>
+        <option disabled>상태</option>
+      </select>
+
+      <h3>placeholder가 존재하고 가로 길이를 변경한 타입</h3>
+
+      <select id="tmp1" data-placeholder="원하는 옵션을 선택하여주십시오">
+        <option>전체</option>
+        <option>신청번호</option>
+        <option>권한 종류</option>
+        <option>권한명</option>
+        <option>상태</option>
+      </select>
+
+      <h3>특정 조건에 따라 리사이징이 필요한 경우</h3>
+      <dl>
+        <dt>조건</dt>
+        <dd>최소값 : 600</dd>
+        <dd>최대값 : 1200</dd>
+        <dd>좌우여백 : 160</dd>
+        <dd>충족조건가로값 : 1200</dd>
+      </dl>
+
+      <select id="tmp2" data-placeholder="원하는 옵션을 선택하여주십시오">
+        <option>전체</option>
+        <option>신청번호</option>
+        <option>권한 종류</option>
+        <option>권한명</option>
+        <option>상태</option>
+      </select>
+
+    </dd>
+  </dl>
+  
+  <script>
+    $( function() { $( 'select' ).selectmenu()}); 
+
+    $( function() {
+      $( "#tmp1" ).selectmenu({ width: 300 }); 
+      $( "#tmp2" ).selectmenu({ width: 1200 - 160 }); 
+    }); 
+
+    const changeResizeSlctBox = ( nodeName , opts = {} ) => {
+      let { minWidth = 600 , maxWidth = 1200 , gapWidth = 160 , chkWidth = 1200 } = opts 
+      ,   winW          = $( window ).width() 
+      ,   crntSlctBox   = $( nodeName ) 
+      ,   rsltWidth     = null 
+      ; 
+
+      switch ( !0 ) {
+        case winW <= chkWidth : rsltWidth = ( minWidth > winW && winW <= chkWidth ) ? minWidth - gapWidth : winW - gapWidth ; break ; 
+        default : rsltWidth = maxWidth - gapWidth ; break ; 
+      }
+      crntSlctBox.selectmenu({ width: rsltWidth }); 
+    } ;
+    
+    $( function() {
+      $( window ).resize( _=> changeResizeSlctBox( '#tmp2' ) ) ; 
+    }) ; 
+
+  </script>
+
+  <dl id="Date" class="bxSample">
+    <dt>Date</dt>
+    <dd>
+      <a href="https://app.zeplin.io/project/5e7861ece4d9e2634c2a703a/screen/5e79a7678b52437106e9c3ee" target="_blank" class="exp" >UI COMPONENTS</a>
+      
+      <h3>달력 가로 퍼센티지</h3>
+      
+      <div class="calendarWrap">
+        <input type="text" value="2020.03.01" readonly>
+        <button type="button">달력 보기</button>
+      </div>
+
+      <h3>달력 가로 고정</h3>
+      
+      <div class="calendarWrap" style="--width:140px;">
+        <input type="text" value="2020.03.01" readonly>
+        <button type="button">달력 보기</button>
+      </div>
+      
+      <h3>달력 활성화</h3>
+      <!-- 달력 활성화 시 active 클래스 추가 필요 -->
+      <div class="calendarWrap active" style="--width:140px;">
+        <input type="text" value="2020.03.01" readonly>
+        <button type="button">달력 보기</button>
+      </div>
+
+    </dd>
+  </dl>
+
+  <dl id="Checkbox" class="bxSample">
+    <dt>Checkbox</dt>
+    <dd>
+      <a href="https://app.zeplin.io/project/5e7861ece4d9e2634c2a703a/screen/5e79a7678b52437106e9c3ee" target="_blank" class="exp" >UI COMPONENTS</a>
+      <h3>기본 | 기본 비활성화 | 체크 | 체크 비활성화</h3>
+
+      <label class="chkWrap">
+        <input type="checkbox">
+        <i></i><span>체크박스</span>
+      </label>
+      <br>
+      <label class="chkWrap">
+        <input type="checkbox" disabled>
+        <i></i><span>체크박스</span>
+      </label>
+      <br>
+      <label class="chkWrap">
+        <input type="checkbox" checked>
+        <i></i><span>체크박스</span>
+      </label>
+      <br>
+      <label class="chkWrap">
+        <input type="checkbox" disabled checked>
+        <i></i><span>체크박스</span>
+      </label>
+
+    </dd>
+  </dl>
+
+  <dl id="Radio" class="bxSample">
+    <dt>Radio</dt>
+    <dd>
+      <a href="https://app.zeplin.io/project/5e7861ece4d9e2634c2a703a/screen/5e79a7678b52437106e9c3ee" target="_blank" class="exp" >UI COMPONENTS</a>
+      <h3>기본 | 기본 비활성화 | 체크 | 체크 비활성화</h3>
+
+      <label class="radioWrap">
+        <input type="radio" name="tmp_rd">
+        <i></i><span>라디오</span>
+      </label>
+      <br>
+      <label class="radioWrap">
+        <input type="radio" name="tmp_rd" disabled="true">
+        <i></i><span>라디오</span>
+      </label>
+      <br>
+      <label class="radioWrap">
+        <input type="radio" name="tmp_rd" checked="true">
+        <i></i><span>라디오</span>
+      </label>
+      <br>
+      <label class="radioWrap">
+        <input type="radio" name="tmp_rd2" checked="true" disabled="true">
+        <i></i><span>라디오</span>
+      </label>
+
+    </dd>
+  </dl>
+
+  <dl id="TextField" class="bxSample">
+    <dt>Text Field</dt>
+    <dd>
+      <a href="https://app.zeplin.io/project/5e7861ece4d9e2634c2a703a/screen/5e79a7678b52437106e9c3ee" target="_blank" class="exp" >UI COMPONENTS</a>
+      
+      <h3>default</h3>
+      <div class="textFieldWrap">
+        <input type="text" required>
+        <label class="placeholder">입력해주세요</label>
+      </div>
+
+      <h3>default - 가로길이 고정</h3>
+      <div class="textFieldWrap" style="--width:240px">
+        <input type="text" required>
+        <label class="placeholder">입력해주세요</label>
+      </div>
+
+      <!-- disabled -->
+      <h3>disabled</h3>
+      <div class="textFieldWrap disabled" style="--width:240px">
+        <input type="text" required disabled>
+        <label class="placeholder">입력해주세요</label>
+      </div>
+      
+      <h3>기본 입력값이 들어가 있는데 disabled 상태</h3>
+      <div class="textFieldWrap disabled" style="--width:240px">
+        <input type="text" value="기본 입력값" disabled>
+        <label class="placeholder">입력해주세요</label>
+      </div>
+
+      <h3>삭제버튼 추가</h3>
+      <div class="textFieldWrap hasDel" style="--width:240px">
+        <input type="text" required>
+        <label class="placeholder">입력해주세요</label>
+        <button type="button" class="btnDel">삭제</button>
+      </div>
+
+    </dd>
+  </dl>
+
+  <dl id="Search" class="bxSample">
+    <dt>Search</dt>
+    <dd>
+      <a href="https://app.zeplin.io/project/5e7861ece4d9e2634c2a703a/screen/5e79a7678b52437106e9c3ee" target="_blank" class="exp" >UI COMPONENTS</a>
+      
+      <h3>기본</h3>
+      <div class="textFieldWrap search">
+        <input type="text" required>
+        <label class="placeholder">검색어를 입력해주세요</label>
+        <button type="button" class="btnSrch">검색</button>
+      </div>
+    
+      <h3>포커스 - 색상 및 삭제 버튼 활성화</h3>
+      <div class="textFieldWrap search hasDel" style="--width:240px;">
+        <input type="text" required>
+        <label class="placeholder">검색어를 입력해주세요</label>
+        <button type="button" class="btnDel">삭제</button>
+        <button type="button" class="btnSrch">검색</button>
+      </div>
+
+      <h3>사용안함 - 색상 비활성화</h3>
+      <div class="textFieldWrap search hasDel disabled" style="--width:240px;">
+        <input type="text" required disabled>
+        <label class="placeholder">검색어를 입력해주세요</label>
+        <button type="button" class="btnDel">삭제</button>
+        <button type="button" class="btnSrch">검색</button>
+      </div>
+
+    </dd>
+  </dl>
+
+  <dl id="Textarea" class="bxSample">
+    <dt>Textarea</dt>
+    <dd>
+      <a href="https://app.zeplin.io/project/5e7861ece4d9e2634c2a703a/screen/5e79a7678b52437106e9c3ee" target="_blank" class="exp" >UI COMPONENTS</a>
+      
+      <h3>기본</h3>
+      <div class="textFieldWrap">
+        <textarea required></textarea>
+        <label class="placeholder">금액을 입력해주세요.</label>
+      </div>
+
+      <h3>가로길이 고정</h3>
+      <div class="textFieldWrap" style="--width:500px;">
+        <textarea required></textarea>
+        <label class="placeholder">금액을 입력해주세요.</label>
+      </div>
+    
+      <h3>비활성화</h3>
+      <div class="textFieldWrap disabled">
+        <textarea required disabled></textarea>
+        <label class="placeholder">금액을 입력해주세요.</label>
+      </div>
+
+    </dd>
+  </dl>

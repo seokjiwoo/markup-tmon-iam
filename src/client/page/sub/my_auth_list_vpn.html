@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>내 정보</title>
+<script src="../../js/lib/jquery-1.12.4.min.js"></script>
+<script src="../../js/lib/jquery-ui.js"></script>
+</head>
+<body class="sub">
+
+<div class="wrap">
+	
+	${ require( '../include/head.html' )()}  
+	
+	<div class="container">
+		
+		${ require( '../include/visual.html' )()}  
+		
+		<nav class="lnb">
+		${ require( '../include/menu_default.html' )({ menu2 : 'active' })}
+		${ require( '../include/menu_toggle.html' )( { visibility : 'show' } )}
+		</nav>
+
+		<main class="contents">
+			<section>
+				<h1>내 정보</h1>
+				<ul class="tab-round">
+					<li><a href="#;">내 정보</a></li>
+					<li class="active"><a href="#;">내 권한</a></li>
+					<li><a href="#;">내 관리자 권한</a></li>
+					<li><a href="#;">대리 승인자 관리</a></li>
+				</ul>
+				<ul class="tab-sub">
+					<li><a href="#;">ADMIN</a></li>
+					<li><a href="#;">FNSTAT</a></li>
+					<li class="active"><a href="#;">VPN</a></li>
+					<li><a href="#;">IPCC</a></li>
+				</ul>
+				<div class="round-cont">
+					<ul class="inner-inputs">
+						<li>
+							<span class="input-label">사용자 ID</span>
+							<div class="input-box">
+								<div class="textFieldWrap disabled">
+									<input type="text" value="abc1234" required disabled>
+									<label class="placeholder">입력해주세요</label>
+								</div>
+							</div>
+						</li>
+						<li>
+							<span class="input-label">사용자명</span>
+							<div class="input-box">
+								<div class="textFieldWrap disabled">
+									<input type="text" value="이티몬" required disabled>
+									<label class="placeholder">입력해주세요</label>
+								</div>
+							</div>
+						</li>
+						<li>
+							<span class="input-label">사용기간 형태</span>
+							<div class="input-box">
+								<div class="textFieldWrap disabled">
+									<input type="text" value="상시" required disabled>
+									<label class="placeholder">입력해주세요</label>
+								</div>
+							</div>
+						</li>
+						<li>
+							<span class="input-label">사용기간</span>
+							<div class="input-box">
+								<div class="textFieldWrap disabled">
+									<input type="text" value="2020.03.11 12:00" required disabled>
+									<label class="placeholder">입력해주세요</label>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</main> <!-- end of contents -->
+	</div> <!-- end of container -->
+
+	${ require( '../include/foot.html' )()}
+
+</div> <!-- end of wrap -->
+
+</body>
+</html>

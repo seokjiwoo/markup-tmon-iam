@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오류페이지</title>
+<script src="../../js/lib/jquery-1.12.4.min.js"></script>
+<script src="../../js/lib/jquery-ui.js"></script>
+</head>
+<body class="sub">
+
+<div class="wrap">
+	
+	${ require( '../include/head.html' )()}  
+	
+	<div class="container">
+	
+		${ require( '../include/visual.html' )()}  
+		
+		<nav class="lnb">
+			${ require( '../include/menu_default.html' )({ menu2 : 'active' })}
+			${ require( '../include/menu_toggle.html' )( { visibility : 'show' } )}
+		</nav>
+
+		<main class="contents">
+			<div class="error_box">
+				<span class="icon"></span>
+				<h3 class="main_desc">
+					일시적인 서비스 장애 입니다.
+				</h3>
+				<p class="sub_desc">
+					잠시 후 다시 시도해주세요.
+				</p>
+				<div class="btn_box">
+					<a href="#" class="btn type3 lg">홈으로</a>
+				</div>
+			</div>
+		</main> <!-- end of contents -->
+	</div> <!-- end of container -->
+
+	${ require( '../include/foot.html' )()}
+
+</div> <!-- end of wrap -->
+
+</body>
+</html>

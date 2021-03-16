@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>어드민 이력</title>
+  
+  <script src="../../js/lib/jquery-1.12.4.min.js"></script>
+  <script src="../../js/lib/jquery-ui.js"></script>
+</head>
+<body class="sub">
+
+  <div class="wrap">
+    
+    ${ require( '../include/head.html' )()}  
+    
+    <div class="container">
+      
+      ${ require( '../include/visual.html' )()}  
+      
+      <nav class="lnb">
+        ${ require( '../include/menu_default.html' )({ menu7 : 'active' })}
+        ${ require( '../include/menu_toggle.html' )( { visibility : 'show' } )}
+      </nav>
+
+      <main class="contents">
+        <section>
+          <h1>어드민 이력</h1>
+
+          <table class="table cont">
+            <colgroup>
+              <col style="width:160px;">
+              <col style="width:auto;">
+              <col style="width:160px;">
+              <col style="width:auto;">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>신청 구분</th>
+                <td>기존</td>
+                <th>대메뉴</th>
+                <td>CX</td>
+              </tr>
+              <tr>
+                <th>중메뉴</th>
+                <td>클레임관리</td>
+                <th>소메뉴</th>
+                <td>배송클레임관리</td>
+              </tr>
+              <tr>
+                <th>권한 명</th>
+                <td>클레임관리 > 배송클레임관리</td>
+                <th>기능명</th>
+                <td>일괄클레임승인처리</td>
+              </tr>
+              <tr>
+                <th>기존 권한명</th>
+                <td>클레임관리 > 배송클레임관리</td>
+                <th>기존 기능명</th>
+                <td>일괄클레임승인처리</td>
+              </tr>
+              <tr>
+                <th>CLASS</th>
+                <td colspan="3" class="hasHeight" style="--height:100px;">
+                  com_tmoncorp_delivery<br />com_tmoncorp_
+                </td>
+              </tr>
+              <tr>
+                <th>METHOD</th>
+                <td>Update</td>
+                <th>METHOD  TYPE</th>
+                <td>B</td>
+              </tr>
+              <tr>
+                <th>권한 시리얼</th>
+                <td>9611283</td>
+                <th>개인정보 취급 여부</th>
+                <td>조회, 수정, 삭제, 다운로드	</td>
+              </tr>
+              <tr>
+                <th>개발자</th>
+                <td>김티몬</td>
+                <th>개발부서</th>
+                <td>플랫폼개발3팀</td>
+              </tr>
+              <tr>
+                <th>신청 일시</th>
+                <td colspan="3">2020-02-01 HH:MM:SS</td>
+              </tr>
+              <tr>
+                <th>1차 승인자</th>
+                <td>홍티몬(기획팀)</td>
+                <th>2차 승인자</th>
+                <td>홍티몬(기획팀)</td>
+              </tr>
+              <tr>
+                <th>제한권한여부</th>
+                <td colspan="3">Y</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="btnsWrap">
+            <button class="btn type2 lg">목록으로 가기</button>
+          </div>
+
+        </section>
+      </main> <!-- end of contents -->
+    </div> <!-- end of container -->
+
+    ${ require( '../include/foot.html' )()}
+
+  </div> <!-- end of wrap -->
+  
+</body>
+</html>

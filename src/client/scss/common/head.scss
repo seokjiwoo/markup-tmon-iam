@@ -1,0 +1,167 @@
+$clrs-bg : getColors('line-bg');
+$clrs-primary : getColors( 'primary' ) ; 
+$clrs-text : getColors( 'text' ) ; 
+$visual-top : map-get( $layoutSize , visual-top ) ; 
+
+header {
+  background:nth( $clrs-bg, 8 ) ;
+  > .in {
+    display:flex ; 
+    align-items: center ;
+    justify-content: space-between ;
+  }
+  h1 {
+    a {
+      display: flex ;
+      width:140px; height:70px ; 
+      background:url( ../images/logo.svg ) no-repeat 0 0 ;
+      text-indent:-9999em; 
+      font-size: 0 ;
+    }
+  }
+  .info {
+    display: inline-flex ;
+    align-items:center ;
+    * {
+      display: inline-flex ;
+      align-items: center;
+    }
+    .user {
+      .noti {
+        position: relative; top:3px; 
+        width:23px; height:22px; 
+        margin-right: 6px ; 
+        background:url( ../images/ic_notice.svg ) no-repeat 0 0 ;
+        text-indent:-999em; font-size: 0 ;
+        span {
+          position:absolute;
+          right:0px; top:-4px ; 
+          min-width: 13px ; height:13px ; 
+          padding:0 3px ; 
+          background-color: red ;
+          border-radius:6.5px ; 
+          background:nth( $clrs-primary, 1 ) ;
+          color:nth( $clrs-bg, 8 ) ;
+          font-size:10px; 
+          font-weight:700 ; 
+          letter-spacing: -.54px ;
+          justify-content: center;
+        }
+      }
+      .noti-box {
+        display: inline-flex;
+        position: relative;
+      }
+      .top-noti-alert {
+        width: 260px;
+        height: 100px;
+        border: 1px solid #6c7580;
+        position: absolute;
+        display: flex;
+        background-color: #fff;
+        top: 0; left: 0;
+        transform: translateX(-50%);
+        margin-top: 36px;
+        margin-left: 10px;
+        flex-direction: column;
+        align-items: start;
+        padding: 18px;
+        box-sizing: border-box;
+        &:before {
+          content: '';
+          width: 8px;
+          height: 8px;
+          border-width: 1px 0 0 1px;
+          border-style: solid;
+          border-color: #6c7580;
+          background-color: inherit;
+          position: absolute;
+          top: -2px;
+          left: 50%;
+          transform: rotate(45deg) translateX(-50%);
+        }
+
+        button.ico-close, a.ico-close {
+          position: absolute;
+          top: 10px; right: 10px;
+          font-size: 0;
+          color: transparent;
+          width: 13px; height: 13px;
+          &:before, &:after {
+            content: '';
+            width: 17px;
+            height: 1px;
+            background-color: #000;
+            position: absolute;
+            top: 0; left: 0;
+            margin-top: 6px;
+            margin-left: -2px;
+          }
+          &:before {
+            transform: rotate(45deg);
+          }
+          &:after {
+            transform: rotate(-45deg);
+          }
+        }
+
+        h5 {
+          width: 100%;
+          @extend .fz-h5;
+          @extend .fw-extbold;
+          color: #000;
+        }
+        > ul {
+          width: 100%;
+          margin-top: 10px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          > li {
+            display: inline-flex;
+            flex-direction: column;
+            margin-left: 18px;
+            color: #959da6;
+            &:first-child {
+              margin-left: 0;
+            }
+            .num {
+              @extend .fz-elem1;
+              @extend .fw-bold;
+              line-height: 18px;
+              &.active {
+                color: #f27935;
+              }
+            }
+            .tit {
+              @extend .fz-elem3;
+              @extend .fw-bold;
+              line-height: 14px;
+              margin-top: 6px;
+            }
+          }
+        }
+      }
+      p{ @include getTypoStyles( subtitle-13 ) ; }
+    }
+    .btns { 
+      margin-left: 20px ; 
+      .btn:not(:last-child) { margin-right:4px ; }
+    }
+  }
+}
+
+.visual {
+  background: url(../images/bg_visual.jpg) no-repeat center center ;
+  background-size: cover ; 
+  p{
+    display:flex ; 
+    align-items: center ;
+    justify-content: center ;
+    text-align: center;
+    height:$visual-top; 
+    color:#fff; 
+    @include getTypoStyles( head-27 ) ;
+  }
+}

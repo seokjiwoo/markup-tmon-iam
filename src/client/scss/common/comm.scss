@@ -1,0 +1,39 @@
+/* function */
+@function getColors ( $findKey : 'text' ) {
+	$rlst : (); 
+	@each $key , $value in $colors {
+		@if ( $key == unquote( $findKey )) {
+			$rlst: $value; 
+		}
+	}
+	@return $rlst; 
+}
+
+/* mixin */
+/* 타이포리스트에서 사용할 스타일 가져오기 */
+@mixin getTypoStyles ( $name ) {
+  $getTypo : map-get( $typoStyles, $name ) ;
+  @each $prop, $value in $getTypo {
+    #{$prop} : $value ; 
+  }
+}
+
+@function getKeys ( $name ) {
+  @return map-keys( $name ) ;
+}
+
+@mixin borderRoundingBox ( $rd : 6px , $pd : 40px  ) {
+  background-color: #fff;
+  border-radius: $rd ; 
+  padding: $pd ; 
+}
+
+@mixin styleLoop( $style : () ) {
+  @each $prop , $value in $style{
+    #{$prop} : $value;
+  }
+};
+
+@mixin bdrRadiusStyle( $tl , $tr , $br , $bl) {
+  border-radius: $tl $tr $br $bl;
+}

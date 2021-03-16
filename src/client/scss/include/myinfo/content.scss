@@ -1,0 +1,42 @@
+$linebgClr: getColors( 'line-bg' ) ;
+$fontClr: getColors( 'text' ) ;
+$primaryClr: getColors( 'primary' ) ;
+
+.contents {
+	> section {
+		// Table 윗 영역
+		.tblTitle {
+			.r-cont {
+				.ui-selectmenu-button {
+					margin-left: 20px;
+				}
+
+				.textFieldWrap {
+					margin-left: 6px;
+				}
+			}
+		}
+
+		// Table 아래 영역
+		.tbl-btm {
+			display: flex;
+			margin-top: 14px;
+			.l-cont {
+				display: inline-flex;
+				align-items: center;
+				> * { margin-right: 6px ;}
+			}
+
+			& + .pagingWrap { margin-top: -10px; }
+		} // .tbl-btm
+
+		.table.list {
+			.btn.recall { width: 52px; }
+			& + .pagingWrap { margin-top: 40px; }
+		} // .table.list
+
+		.org-txt {
+			color: nth( $primaryClr, 1 );
+		}
+	} // > section
+}

@@ -1,0 +1,50 @@
+{{!
+    변수설명
+    "col":[{"width":"숫자값px"},{"width":"100px"},{"width":"100px"}],
+    "title":["th 제목입니다","th 제목입니다","th 제목입니다"],
+    "table":[
+        [
+        {"content":"td 요소","textAlign":"tleft"},//tleft왼쪽 정렬
+        {"content":"나다라","textAlign":"tright"},//tright오른쪽 정렬
+        {"content":"나다라","textAlign":""}//정렬 없음
+        ],
+        [
+        {"content":"td 요소","textAlign":"tleft"},//tleft왼쪽 정렬
+        {"content":"나다라","textAlign":"tright"},//tright오른쪽 정렬
+        {"content":"나다라","textAlign":""}//정렬 없음
+        ]
+    ]
+    "table":[] //빈 요소일 때 결과없음 텍스트 노출
+}}
+
+<table class="table list">
+    <colgroup>
+        {{#col}}
+    <col style="width:{{width}}"></col>
+        {{/col}}
+    </colgroup>
+    <thead>
+    <tr>
+        {{#title}}
+        <th>{{.}}</th>
+        {{/title}}
+    </tr>
+    </thead>
+    <tbody>
+        {{#table}}
+        <tr>
+            {{#.}}
+                <td class="{{textAlign}}">{{{content}}}</td>
+            {{/.}}
+        </tr>
+        {{/table}}
+        {{^table}}
+        <tr>
+            <td colspan="7">
+                충전 내역이 없습니다.
+            </td>
+        </tr>
+        {{/table}}
+
+    </tbody>
+  </table>

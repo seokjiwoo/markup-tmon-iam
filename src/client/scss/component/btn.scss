@@ -1,0 +1,109 @@
+.btn{
+  $btn-line-bg : getColors('line-bg');
+  $btn-text : getColors('text');
+  $btn-primary : getColors('primary');
+
+  @mixin btnStyle( $style : () ){
+    $defaultStyle : (
+      background-color: nth( $btn-line-bg , 8 ),
+      border: 1px solid nth( $btn-line-bg , 3),
+      border-radius: 3px, 
+      color: nth( $btn-text , 2),
+    );
+    &.sm{ 
+      $size: (
+        height: 28px , 
+        line-height: 28px ,
+        padding: 0 10px ,
+        font-size: 12px ,
+      );
+      @include styleLoop( $size );
+    }
+    &.md{
+      $size: (
+        height: 36px , 
+        line-height: 36px ,
+        padding: 0 20px ,
+        font-size: 13px ,
+      );
+      @include styleLoop( $size );
+    }
+    &.lg{
+      $size: (
+        height: 44px , 
+        line-height: 44px ,
+        padding: 0 35px ,
+        font-size: 15px ,
+      );
+      @include styleLoop( $size );
+    }
+
+    $defaultStyle : map-merge( $defaultStyle , $style );
+    @include styleLoop( $defaultStyle );
+  }; // end of btnStyle;
+ 
+  display: inline-flex ;text-decoration:none;
+  justify-content: center; align-items: center; 
+  letter-spacing: -0.5px; vertical-align: top; 
+  box-sizing: border-box;
+
+  @extend .fz-elem3; @extend .fw-bold; font-family: $font-nanum;
+  @include btnStyle;
+ 
+  &.type1{ @include btnStyle; }
+  &.type2{
+    $style: (
+      border-color: nth( $btn-primary , 1 ),
+      background-color: nth( $btn-line-bg , 8 ) ,
+      color: nth( $btn-primary , 1 ) ,
+    );
+    @include btnStyle( $style );
+  }
+  &.type3{
+    $style: (
+      border-color: nth( $btn-primary , 1 ),
+      background-color: nth( $btn-primary , 1 ),
+      color: nth( $btn-line-bg , 8 ) ,
+    );
+    @include btnStyle( $style );
+  }
+  &.basic{
+    $style: (
+      height: 30px,
+      line-height: 30px,
+      border-radius: 0,
+      padding:0 10px,
+    );
+    @include btnStyle( $style );
+  }
+  &.admin{
+    $style: (
+      height: 30px,
+      background-color: #4a5065 ,
+      border-color: #4a5065,
+      border-radius: 0,
+      color: nth( $btn-line-bg , 8 ) ,
+      padding : 0 10px,
+    );
+    &:after{
+      content: ""; width: 5px; height: 10px; 
+      display: inline-block; margin-left: 6px;
+      background: {
+        image: url('../images/ico_arrow_btn.svg');
+        position: 0 0;
+      }
+    }
+    @include btnStyle( $style );
+  }
+  .ico{
+    display: inline-block;
+    margin-right: 6px ;
+  }
+  .file{
+    width: 10px; height: 12px; 
+    background: {
+      image: url('../images/ic_file.svg');
+      position: 0 0;
+    }
+  }
+} // end of btn

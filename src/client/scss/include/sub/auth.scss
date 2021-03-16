@@ -1,0 +1,62 @@
+$linebgClr: getColors( 'line-bg' ) ;
+$fontClr: getColors( 'text' ) ;
+$primaryClr: getColors( 'primary' ) ;
+
+.align{
+  &-type1{
+    .chkWrap{ vertical-align: middle; }
+    .ui-selectmenu-button.ui-button{ margin-right: 16px;}
+  }
+  &-type2{
+    .textFieldWrap{  margin-left: 19px; }
+  }
+}
+
+.dateState{
+  width: 86px; 
+  display: inline-flex; align-items: center; 
+  i{
+    width: 21px; height: 21px;
+    display: inline-flex; margin-left: auto;
+    background:{
+      position: 0 0;
+      image : url( ../images/ic-date.svg )
+    }
+  }
+  &.disClr i{ filter: invert(67%) sepia(15%) saturate(191%) hue-rotate(171deg) brightness(90%) contrast(90%); }
+}
+
+.sealine{
+  height: 1px; background-color: #ebedef;
+  border: 0; margin: 15px 0 12px;
+  @at-root .textFieldWrap + .innerListTbl{ margin: 20px 0 5px !important }
+}
+
+.note_list{
+  margin-top: 12px;
+  li{
+    position: relative; padding-left: 10px;
+    margin-top: 5px;letter-spacing: -0.54px;
+    color: #a0a1a8; font-size: 13px;
+    &:before{
+      content:"";
+      position: absolute; left: 0; top: 6px;
+      width: 3px; height: 3px;
+      background-color:#a0a1a8; display: block;
+    }
+    &:first-child{ margin-top: 0; }
+  }
+}
+
+.selbox{
+  $select : '.ui-selectmenu-button.ui-button .ui-selectmenu-text';
+  $width : var(--width , 142px);
+  display: inline-block;
+  #{ $select }{ min-width: $width; }
+}
+
+$inputsLi : '.contents > section .round-cont .inputs'; 
+@at-root #{$inputsLi} {
+  display: grid; 
+  grid-template-columns: repeat( 2, minmax(250px, 1fr) );
+}

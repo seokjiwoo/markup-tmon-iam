@@ -1,0 +1,97 @@
+$linebgClr: getColors( 'line-bg' ) ;
+$fontClr: getColors( 'text' ) ;
+$primaryClr: getColors( 'primary' ) ;
+
+.contents {
+	display: grid;
+	grid-template-areas: 
+		"mArea1 mArea1"
+		"mArea2 mArea3"
+	;
+	grid-gap: 20px;
+
+	> section {
+		padding: 35px 40px 17px 40px !important;
+		
+		@for $i from 1 through 3 {
+			&:nth-child(#{ $i }) { grid-area: mArea#{ $i }; }
+		}
+
+		h1 {
+			display: flex;
+			@include getTypoStyles( head-18 );
+			color: nth( $fontClr, 1 );
+			margin-bottom: 26px;
+			em { color: nth( $primaryClr, 1 ); }
+		} // h1
+
+		.tbl-head {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			margin: 38px 0 14px 0;
+			@include getTypoStyles( subtitle-13 );
+		} // .tbl-head
+		
+		.l-cont {
+			flex: auto;
+			display: inline-flex;
+			color: nth( $fontClr, 1 );
+			em { 
+				display: inline-block; margin-left: 8px ;
+				color: nth( $primaryClr, 1 ); 
+
+				$first-em : selector-replace( &, "section", "section:first-child") ;
+				@at-root #{ $first-em } { margin-left: 3px ; } 
+
+			}
+		}
+		.r-cont {
+			flex: auto;
+			display: inline-flex;
+			justify-content: flex-end;
+			align-items: center;
+
+			.link-more {
+				@include getTypoStyles( body-13 );
+				color: nth( $fontClr, 4 );
+				display: inline-flex;
+				align-items: baseline;
+				&:after {
+					content: '';
+					position: relative;
+					top:-1px ;
+					display: inline-block;
+					width: 7px;
+					height: 7px;
+					border-width: 1px 1px 0 0;
+					border-style: solid;
+					border-color: nth( $fontClr, 4 );
+					transform: rotate( 45deg );
+					margin: -1px 3px 0 3px;
+				}
+			}
+		} // .r-cont
+
+		.table {
+			border-top: 1px solid nth( $linebgClr, 2);
+			> thead {
+				> tr {
+					> th {
+						height: 49px;
+						border-color: nth( $linebgClr, 5);
+						font-size:13px ; 
+					}
+				}
+			}
+			> tbody {
+				> tr {
+					> td {
+						height: 48px;
+						border-bottom: 0;
+					}
+				}
+			}
+		} // .table
+	}
+}

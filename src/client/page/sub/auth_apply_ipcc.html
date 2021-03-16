@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>업무 권한 신청</title>
+  <script src="../../js/lib/jquery-1.12.4.min.js"></script>
+  <script src="../../js/lib/jquery-ui.js"></script>
+</head>
+<body class="sub">
+
+  <div class="wrap">
+    
+    ${ require( '../include/head.html' )()}  
+    
+    <div class="container">
+      
+      ${ require( '../include/visual.html' )()}  
+      
+      <nav class="lnb">
+        ${ require( '../include/menu_default.html' )({ menu3 : 'active' })}
+        ${ require( '../include/menu_toggle.html' )( { visibility : 'show' } )}
+      </nav>
+
+      <main class="contents">
+        <section>
+          <h1>업무 권한 신청</h1>
+          <table class="table cont">
+            <colgroup>
+              <col style="width: 160px">
+              <col style="width: auto">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>신청 대상</th>
+                <td>
+                  <label class="radioWrap">
+                    <input type="radio" name="group1">
+                    <i></i><span>본인</span>
+                  </label>
+                  <label class="radioWrap">
+                    <input type="radio" name="group1" checked>
+                    <i></i><span>대리신청</span>
+                  </label>
+                  <div class="textFieldWrap search hasDel disabled" style="--width:200px;">
+                    <input type="text" disabled>
+                    <label class="placeholder">검색어를 입력해주세요</label>
+                    <button type="button" class="btnDel">삭제</button>
+                    <button type="button" class="btnSrch">검색</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>권한 종류</th>
+                <td>
+                  <label class="radioWrap">
+                    <input type="radio" name="group2">
+                    <i></i><span>ADMIN</span>
+                  </label>
+                  <label class="radioWrap">
+                    <input type="radio" name="group2">
+                    <i></i><span>FNSTAT</span>
+                  </label>
+                  <label class="radioWrap">
+                    <input type="radio" name="group2">
+                    <i></i><span>VPN</span>
+                  </label>
+                  <label class="radioWrap">
+                    <input type="radio" name="group2" checked>
+                    <i></i><span>IPCC</span>
+                  </label>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="btnsWrap">
+            <button class="btn type3 lg">조회</button>
+          </div>
+          <table class="table cont">
+            <colgroup>
+              <col style="width: 160px">
+              <col style="width: auto">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>계정 양식</th>
+                <td>
+                  <div class="round-cont init">
+                    <ul class="inputs">
+                      <li>
+                        <span class="input-label">사용자 ID</span>
+                        <div class="input-box">
+                          <div class="textFieldWrap disabled">
+                            <input type="text" value="tmon123" disabled>
+                            <label class="placeholder">입력해주세요</label>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="input-label">사용자 명</span>
+                        <div class="input-box">
+                          <div class="textFieldWrap disabled">
+                            <input type="text" value="김티몬" disabled>
+                            <label class="placeholder">입력해주세요</label>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="input-label">근무상태</span>
+                        <div class="input-box">
+                          <div class="selbox">
+                            <select class="fullSize">
+                              <option>입사(외주)</option>
+                              <option>신청번호</option>
+                              <option>권한 종류</option>
+                              <option>권한명</option>
+                              <option>상태</option>
+                            </select>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="input-label">파트명</span>
+                        <div class="input-box">
+                          <div class="textFieldWrap search hasDel">
+                            <input type="text" required>
+                            <label class="placeholder">기획팀</label>
+                            <button type="button" class="btnDel">삭제</button>
+                            <button type="button" class="btnSrch">검색</button>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="input-label">상담업무유형 코드</span>
+                        <div class="input-box">
+                          <div class="selbox">
+                            <select class="fullSize">
+                              <option>전화상담</option>
+                              <option>신청번호</option>
+                              <option>권한 종류</option>
+                              <option>권한명</option>
+                              <option>상태</option>
+                            </select>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="input-label">권한 만료 일시</span>
+                        <div class="input-box">
+                          <div class="calendarWrap" style="--width:100%;">
+                            <input type="text" value="2020.03.01" readonly="">
+                            <button type="button">달력 보기</button>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="input-label">실시간 청취 여부</span>
+                        <div class="input-box">
+                          <div class="selbox">
+                            <select class="fullSize">
+                              <option>NO</option>
+                              <option>신청번호</option>
+                              <option>권한 종류</option>
+                              <option>권한명</option>
+                              <option>상태</option>
+                            </select>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="input-label">근무(퇴사) 상태 일시</span>
+                        <div class="input-box">
+                          <div class="calendarWrap" style="--width:100%;">
+                            <input type="text" value="2020.03.01" readonly="">
+                            <button type="button">달력 보기</button>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="input-label">권한 상위그룹 코드</span>
+                        <div class="input-box">
+                          <div class="selbox">
+                            <select class="fullSize">
+                              <option>상담사</option>
+                              <option>신청번호</option>
+                              <option>권한 종류</option>
+                              <option>권한명</option>
+                              <option>상태</option>
+                            </select>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="input-label">권한 그룹 코드</span>
+                        <div class="input-box">
+                          <div class="selbox">
+                            <select class="fullSize">
+                              <option>상담사</option>
+                              <option>신청번호</option>
+                              <option>권한 종류</option>
+                              <option>권한명</option>
+                              <option>상태</option>
+                            </select>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>신청사유</th>
+                <td>
+                  <div class="textFieldWrap">
+                    <textarea required style="--height:146px"></textarea>
+                    <label class="placeholder">입력해주세요</label>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="btnsWrap">
+            <button class="btn type2 lg">초기화</button>
+            <button class="btn type3 lg">신청</button>
+          </div>
+        </section>
+      </main> <!-- end of contents -->
+    </div> <!-- end of container -->
+
+    ${ require( '../include/foot.html' )()}
+
+  </div> <!-- end of wrap -->
+</body>
+</html>

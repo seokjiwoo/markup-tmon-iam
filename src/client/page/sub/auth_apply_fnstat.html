@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>업무 권한 신청</title>
+  <script src="../../js/lib/jquery-1.12.4.min.js"></script>
+  <script src="../../js/lib/jquery-ui.js"></script>
+</head>
+<body class="sub">
+
+  <div class="wrap">
+    
+    ${ require( '../include/head.html' )()}  
+    
+    <div class="container">
+      
+      ${ require( '../include/visual.html' )()}  
+      
+      <nav class="lnb">
+        ${ require( '../include/menu_default.html' )({ menu3 : 'active' })}
+        ${ require( '../include/menu_toggle.html' )( { visibility : 'show' } )}
+      </nav>
+
+      <main class="contents">
+        <section>
+          <h1>업무 권한 신청</h1>
+          <table class="table cont">
+            <colgroup>
+              <col style="width: 160px">
+              <col style="width: auto">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>신청 대상</th>
+                <td>
+                  <label class="radioWrap">
+                    <input type="radio" name="group1" checked>
+                    <i></i><span>본인</span>
+                  </label>
+                  <label class="radioWrap">
+                    <input type="radio" name="group1">
+                    <i></i><span>대리신청</span>
+                  </label>
+                  <div class="textFieldWrap search hasDel" style="--width:200px;">
+                    <input type="text" required>
+                    <label class="placeholder">김티몬</label>
+                    <button type="button" class="btnDel">삭제</button>
+                    <button type="button" class="btnSrch">검색</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>권한 종류</th>
+                <td>
+                  <label class="radioWrap">
+                    <input type="radio" name="group2">
+                    <i></i><span>ADMIN</span>
+                  </label>
+                  <label class="radioWrap">
+                    <input type="radio" name="group2" checked>
+                    <i></i><span>FNSTAT</span>
+                  </label>
+                  <label class="radioWrap">
+                    <input type="radio" name="group2">
+                    <i></i><span>VPN</span>
+                  </label>
+                  <label class="radioWrap">
+                    <input type="radio" name="group2">
+                    <i></i><span>IPCC</span>
+                  </label>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="btnsWrap">
+            <button class="btn type3 lg">조회</button>
+          </div>
+          <table class="table cont">
+            <colgroup>
+              <col style="width: 160px">
+              <col style="width: auto">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>상세 권한 선택</th>
+                <td>
+                  <div class="align-type1">
+                    <label class="chkWrap">
+                      <input type="checkbox">
+                      <i></i><span>내가 가진 권한 숨기기</span>
+                    </label>
+                  </div>
+                  <hr class="sealine">
+                  <div class="textFieldWrap search">
+                    <input type="text" required="">
+                    <label class="placeholder">검색하실 권한 명을 입력해 주세요</label>
+                    <button type="button" class="btnSrch">검색</button>
+                  </div>
+                  <table class="innerListTbl">
+                    <colgroup>
+                      <col style="width: 60px;">
+                      <col style="width: 202x;">
+                      <col style="width: 662px;">
+                      <col style="width: auto;">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>&nbsp;</th>
+                        <th>코드</th>
+                        <th>권한 명</th>
+                        <th>만료일</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <label class="chkWrap">
+                            <input type="checkbox" disabled checked>
+                            <i></i>
+                          </label>
+                        </td>
+                        <td><span class="disClr">2003920192</span></td>
+                        <td class="tleft"><span class="disClr">[제한] 티몬관리1 &gt; 재무정보</span></td>
+                        <td><span class="dateState disClr">2020.04.01<i></i></span></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="chkWrap">
+                            <input type="checkbox">
+                            <i></i>
+                          </label>
+                        </td>
+                        <td><span>2003920192</span></td>
+                        <td class="tleft"><span>[제한] 티몬관리1 &gt; 재무정보</span></td>
+                        <td><span class="dateState">2020.04.01</span></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="chkWrap">
+                            <input type="checkbox" checked>
+                            <i></i>
+                          </label>
+                        </td>
+                        <td><span>2003920192</span></td>
+                        <td class="tleft"><span>[제한] 티몬관리1 &gt; 재무정보</span></td>
+                        <td><span class="dateState">2020.04.01<i></i></span></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="chkWrap">
+                            <input type="checkbox" disabled checked>
+                            <i></i>
+                          </label>
+                        </td>
+                        <td><span class="disClr">2003920192</span></td>
+                        <td class="tleft"><span class="disClr">[제한] 티몬관리1 &gt; 재무정보</span></td>
+                        <td><span class="dateState disClr">2020.04.01<i></i></span></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="chkWrap">
+                            <input type="checkbox">
+                            <i></i>
+                          </label>
+                        </td>
+                        <td><span>2003920192</span></td>
+                        <td class="tleft"><span>[제한] 티몬관리1 &gt; 재무정보</span></td>
+                        <td><span class="dateState">2020.04.01</span></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="chkWrap">
+                            <input type="checkbox" checked>
+                            <i></i>
+                          </label>
+                        </td>
+                        <td><span class="info">2003920192</span></td>
+                        <td class="tleft"><span class="info">[제한] 티몬관리1 &gt; 재무정보</span></td>
+                        <td><span class="dateState">2020.04.01<i></i></span></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="chkWrap">
+                            <input type="checkbox" disabled checked>
+                            <i></i>
+                          </label>
+                        </td>
+                        <td><span class="disClr">2003920192</span></td>
+                        <td class="tleft"><span class="disClr">[제한] 티몬관리1 &gt; 재무정보</span></td>
+                        <td><span class="dateState disClr">2020.04.01<i></i></span></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="chkWrap">
+                            <input type="checkbox">
+                            <i></i>
+                          </label>
+                        </td>
+                        <td><span>2003920192</span></td>
+                        <td class="tleft"><span>[제한] 티몬관리1 &gt; 재무정보</span></td>
+                        <td><span class="dateState">2020.04.01</span></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="chkWrap">
+                            <input type="checkbox" checked>
+                            <i></i>
+                          </label>
+                        </td>
+                        <td><span>2003920192</span></td>
+                        <td class="tleft"><span>[제한] 티몬관리1 &gt; 재무정보</span></td>
+                        <td><span class="dateState">2020.04.01<i></i></span></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="chkWrap">
+                            <input type="checkbox" disabled checked>
+                            <i></i>
+                          </label>
+                        </td>
+                        <td><span class="disClr">2003920192</span></td>
+                        <td class="tleft"><span class="disClr">[제한] 티몬관리1 &gt; 재무정보</span></td>
+                        <td><span class="dateState disClr">2020.04.01<i></i></span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th>승인자 정보</th>
+                <td>
+                  <table class="innerListTbl">
+                    <colgroup>
+                      <col style="width:452px;">
+                      <col style="width:474px;">
+                      <col style="width:auto;">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>권한 명</th>
+                        <th>승인자</th>
+                        <th>최종 승인자</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="tleft">MD &gt; 티켓 딜관리 &gt; 딜 등록</td>
+                        <td>이티몬(딜 기획팀) &gt; [대리승인자] 김티몬(매장팀)</td>
+                        <td>박티몬(딜 기획팀)</td>
+                      </tr>
+                      <tr>
+                        <td class="tleft">MD &gt; 티켓 딜관리 &gt; 딜 목록(관리)</td>
+                        <td>이티몬(딜 기획팀)</td>
+                        <td>박티몬(딜 기획팀)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th>신청사유</th>
+                <td>
+                  <div class="textFieldWrap">
+                    <textarea required style="--height:146px"></textarea>
+                    <label class="placeholder">입력해주세요</label>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="btnsWrap">
+            <button class="btn type2 lg">초기화</button>
+            <button class="btn type3 lg">신청</button>
+          </div>
+        </section>
+      </main> <!-- end of contents -->
+    </div> <!-- end of container -->
+
+    ${ require( '../include/foot.html' )()}
+
+  </div> <!-- end of wrap -->
+</body>
+</html>

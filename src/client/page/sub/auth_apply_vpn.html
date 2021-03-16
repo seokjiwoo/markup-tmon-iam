@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>업무 권한 신청</title>
+  <script src="../../js/lib/jquery-1.12.4.min.js"></script>
+  <script src="../../js/lib/jquery-ui.js"></script>
+</head>
+<body class="sub">
+
+  <div class="wrap">
+    
+    ${ require( '../include/head.html' )()}  
+    
+    <div class="container">
+      
+      ${ require( '../include/visual.html' )()}  
+      
+      <nav class="lnb">
+        ${ require( '../include/menu_default.html' )({ menu3 : 'active' })}
+        ${ require( '../include/menu_toggle.html' )( { visibility : 'show' } )}
+      </nav>
+
+      <main class="contents">
+        <section>
+          <h1>업무 권한 신청</h1>
+          <table class="table cont">
+            <colgroup>
+              <col style="width: 160px">
+              <col style="width: auto">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>신청 대상</th>
+                <td>
+                  <label class="radioWrap">
+                    <input type="radio" name="group1">
+                    <i></i><span>본인</span>
+                  </label>
+                  <label class="radioWrap">
+                    <input type="radio" name="group1" checked>
+                    <i></i><span>대리신청</span>
+                  </label>
+                  <div class="textFieldWrap search hasDel disabled" style="--width:200px;">
+                    <input type="text" disabled>
+                    <label class="placeholder">검색어를 입력해주세요</label>
+                    <button type="button" class="btnDel">삭제</button>
+                    <button type="button" class="btnSrch">검색</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>권한 종류</th>
+                <td>
+                  <label class="radioWrap">
+                    <input type="radio" name="group2">
+                    <i></i><span>ADMIN</span>
+                  </label>
+                  <label class="radioWrap">
+                    <input type="radio" name="group2">
+                    <i></i><span>FNSTAT</span>
+                  </label>
+                  <label class="radioWrap">
+                    <input type="radio" name="group2" checked>
+                    <i></i><span>VPN</span>
+                  </label>
+                  <label class="radioWrap">
+                    <input type="radio" name="group2">
+                    <i></i><span>IPCC</span>
+                  </label>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="btnsWrap">
+            <button class="btn type3 lg">조회</button>
+          </div>
+          <table class="table cont">
+            <colgroup>
+              <col style="width: 160px">
+              <col style="width: auto">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>승인자 정보</th>
+                <td>
+                  <table class="innerListTbl">
+                    <colgroup>
+                      <col style="width:624px;">
+                      <col style="width:auto;">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>권한 명</th>
+                        <th>승인자</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="tleft">VPN</td>
+                        <td>이티몬(딜 기획팀) &gt; [대리승인자] 김티몬(매장팀)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th>권한 만료 일시</th>
+                <td>
+                  <div class="calendarWrap" style="--width:140px;">
+                    <input type="text" value="2020.03.01" readonly>
+                    <button type="button">달력 보기</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>신청사유</th>
+                <td>
+                  <div class="textFieldWrap">
+                    <textarea required style="--height:146px"></textarea>
+                    <label class="placeholder">입력해주세요</label>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="btnsWrap">
+            <button class="btn type2 lg">초기화</button>
+            <button class="btn type3 lg">신청</button>
+          </div>
+        </section>
+      </main> <!-- end of contents -->
+    </div> <!-- end of container -->
+
+    ${ require( '../include/foot.html' )()}
+
+  </div> <!-- end of wrap -->
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>내 정보</title>
+<script src="../../js/lib/jquery-1.12.4.min.js"></script>
+<script src="../../js/lib/jquery-ui.js"></script>
+<style>
+.layer-hr {
+	display: block;
+	height: 1px;
+	background-color: #e3e3e3;
+	border: 0;
+	margin: 10px 0;
+}
+</style>
+</head>
+<body class="sub">
+
+	<!-- 만료일 연장 신청(FNSTAT) -->
+<div class="layerPop" style="width: 765px;">
+	<div class="layer_hd">
+		<h3>만료일 연장 신청</h3>
+	</div>
+	<div class="layer_ct">
+		<div class="expire">
+			<table class="table list small">
+				<colgroup>
+					<col style="width: 48px">
+					<col style="width: 370px">
+					<col style="width: 100px">
+					<col style="width: auto">
+				</colgroup>
+				<thead>
+				<tr>
+					<th>NO</th>
+					<th>권한 명</th>
+					<th>기존 만료일</th>
+					<th>연장 만료일</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>1</td>
+					<td class="tleft">MD &gt; 티켓 딜 관리 &gt; 딜 등록(관리)</td>
+					<td>2020.10.06</td>
+					<td>
+						<div class="calendarWrap" style="width:140px;">
+							<input type="text" value="2020.03.01" readonly="">
+							<button type="button">달력 보기</button>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td class="tleft">MD &gt; 티켓 딜 관리 &gt; 딜 등록(관리)</td>
+					<td>2020.10.06</td>
+					<td>
+						<div class="calendarWrap" style="width:140px;">
+							<input type="text" value="2020.03.01" readonly="">
+							<button type="button">달력 보기</button>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td class="tleft">MD &gt; 티켓 딜 관리 &gt; 딜 등록(관리)</td>
+					<td>2020.10.06</td>
+					<td>
+						<div class="calendarWrap" style="width:140px;">
+							<input type="text" value="2020.03.01" readonly="">
+							<button type="button">달력 보기</button>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td class="tleft">MD &gt; 티켓 딜 관리 &gt; 딜 등록(관리)</td>
+					<td>2020.10.06</td>
+					<td>
+						<div class="calendarWrap" style="width:140px;">
+							<input type="text" value="2020.03.01" readonly="">
+							<button type="button">달력 보기</button>
+						</div>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+			<table class="table cont small">
+				<colgroup>
+					<col style="width: 115px">
+					<col style="width: auto">
+				</colgroup>
+				<tbody>
+				<tr>
+					<th>신청 사유</th>
+					<td>
+						<div class="textFieldWrap">
+							<textarea required=""></textarea>
+							<label class="placeholder">입력해주세요</label>
+						</div>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="layer_btns">
+		<button class="btn type3 lg">신청</button>
+	</div>
+	<button type="button" class="btn_close">닫기</button>
+</div>
+<!-- // 만료일 연장 신청(FNSTAT) -->
+
+<!-- 만료일 연장 신청(ADMIN) -->
+<div class="layerPop" style="width: 600px;">
+	<div class="layer_hd">
+		<h3>만료일 연장 신청</h3>
+	</div>
+	<div class="layer_ct">
+		<div class="expire">
+			<table class="table list small">
+				<colgroup>
+					<col style="width: 48px">
+					<col style="width: 130px">
+					<col style="width: auto">
+					<col style="width: 110px">
+				</colgroup>
+				<thead>
+				<tr>
+					<th>NO</th>
+					<th>신청 구분</th>
+					<th>권한 명</th>
+					<th>기존 만료일</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>1</td>
+					<td>어드민 메뉴별 신청</td>
+					<td class="tleft">MD > 티켓 딜 관리 > 딜 등록(관리)</td>
+					<td>2020.10.06</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>어드민 메뉴별 신청</td>
+					<td class="tleft">MD > 티켓 딜 관리 > 딜 등록(관리)</td>
+					<td>2020.10.06</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>어드민 메뉴별 신청</td>
+					<td class="tleft">MD > 티켓 딜 관리 > 딜 등록(관리)</td>
+					<td>2020.10.06</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>어드민 메뉴별 신청</td>
+					<td class="tleft">MD > 티켓 딜 관리 > 딜 등록(관리)</td>
+					<td>2020.10.06</td>
+				</tr>
+				</tbody>
+			</table>
+			<table class="table cont small">
+				<colgroup>
+					<col style="width: 115px">
+					<col style="width: auto">
+				</colgroup>
+				<tbody>
+				<tr>
+					<th>만료일 연장</th>
+					<td>
+						<div class="calendarWrap" style="width:140px;">
+							<input type="text" value="2020.03.01" readonly="">
+							<button type="button">달력 보기</button>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>신청 사유</th>
+					<td>
+						<div class="textFieldWrap">
+							<textarea required=""></textarea>
+							<label class="placeholder">입력해주세요</label>
+						</div>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="layer_btns">
+		<button class="btn type3 lg">신청</button>
+	</div>
+	<button type="button" class="btn_close">닫기</button>
+</div>
+<!-- // 만료일 연장 신청(ADMIN) -->
+
+<hr class="layer-hr">
+
+<!-- 만료일 연장 신청(FNSTAT) -->
+<div class="layerPop" style="width: 600px;">
+	<div class="layer_hd">
+	<h3>만료일 연장 신청</h3>
+	</div>
+	<div class="layer_ct">
+		<div class="expire">
+			<table class="table list small">
+				<colgroup>
+					<col style="width: 48px">
+					<col style="width: auto">
+					<col style="width: 110px">
+				</colgroup>
+				<thead>
+				<tr>
+					<th>NO</th>
+					<th>권한 명</th>
+					<th>기존 만료일</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>1</td>
+					<td class="tleft">MD > 티켓 딜 관리 > 딜 등록(관리)</td>
+					<td>2020.10.06</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td class="tleft">MD > 티켓 딜 관리 > 딜 등록(관리)</td>
+					<td>2020.10.06</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td class="tleft">MD > 티켓 딜 관리 > 딜 등록(관리)</td>
+					<td>2020.10.06</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td class="tleft">MD > 티켓 딜 관리 > 딜 등록(관리)</td>
+					<td>2020.10.06</td>
+				</tr>
+				</tbody>
+			</table>
+			<table class="table cont small">
+				<colgroup>
+					<col style="width: 115px">
+					<col style="width: auto">
+				</colgroup>
+				<tbody>
+				<tr>
+					<th>만료일 연장</th>
+					<td>
+						<div class="calendarWrap" style="width:140px;">
+							<input type="text" value="2020.03.01" readonly="">
+							<button type="button">달력 보기</button>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>신청 사유</th>
+					<td>
+						<div class="textFieldWrap">
+							<textarea required=""></textarea>
+							<label class="placeholder">입력해주세요</label>
+						</div>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="layer_btns">
+		<button class="btn type3 lg">신청</button>
+	</div>
+	<button type="button" class="btn_close">닫기</button>
+</div>
+<!-- // 만료일 연장 신청(FNSTAT) -->
+
+<hr class="layer-hr">
+
+<!-- 대리 승인 요청 -->
+<div class="layerPop">
+	<div class="layer_hd">
+		<h3>대리 승인 요청</h3>
+		</div>
+		<div class="layer_ct">
+		<div class="deputy">
+			<table class="table cont small">
+				<colgroup>
+					<col style="width: 115px">
+					<col style="width: auto">
+				</colgroup>
+				<tbody>
+				<tr>
+					<th>대리 승인자</th>
+					<td>
+						<div class="textFieldWrap search" style="width: 200px;">
+							<input type="text" required="">
+							<label class="placeholder">김티몬</label>
+							<button type="button" class="btnSrch">검색</button>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>권한 선택</th>
+					<td>
+						<label class="chkWrap">
+							<input type="checkbox" checked="">
+							<i></i><span>승인 권한</span>
+						</label>
+						<label class="chkWrap">
+							<input type="checkbox" checked="">
+							<i></i><span>관리 권한</span>
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<th>상시 여부</th>
+					<td>
+						<label class="chkWrap">
+							<input type="checkbox">
+							<i></i><span>상시</span>
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<th>시작일 선택</th>
+					<td>
+						<div class="calendarWrap" style="width:140px;">
+							<input type="text" value="2020.03.01" readonly="">
+							<button type="button">달력 보기</button>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>종료일 선택</th>
+					<td>
+						<div class="calendarWrap" style="width:140px;">
+							<input type="text" value="2020.03.01" readonly="">
+							<button type="button">달력 보기</button>
+						</div>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="layer_btns">
+		<button class="btn type3 lg">요청</button>
+	</div>
+	<button type="button" class="btn_close">닫기</button>
+</div>
+<!-- // 대리 승인 요청 -->
+
+<hr class="layer-hr">
+
+<!-- 대리 승인자 선택 -->
+<!-- 검색 후 -->
+<div class="layerPop" style="width: 400px;">
+	<div class="layer_hd">
+		<h3>대리 승인자를 선택해 주세요.</h3>
+	</div>
+	<div class="layer_ct">
+		<div class="deputy">
+			<div class="searchBar">
+				<select id="pop1">
+					<option>선택</option>
+					<option>옵션1</option>
+					<option>옵션2</option>
+					<option>옵션3</option>
+					<option>옵션4</option>
+				</select>
+				<div class="textFieldWrap search" style="width: 220px;">
+					<input type="text" required="">
+					<label class="placeholder">검색어를 입력해주세요</label>
+					<button type="button" class="btnSrch">검색</button>
+				</div>
+			</div>
+			<table class="table list small">
+				<colgroup>
+					<col style="width: 100px">
+					<col style="width: auto">
+				</colgroup>
+				<thead>
+				<tr>
+					<th>이름</th>
+					<th>부서</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>김티몬</td>
+					<td class="tleft">[서비스기획실]딜 기획팀</td>
+				</tr>
+				<tr>
+					<td>김티몬</td>
+					<td class="tleft">[서비스기획실]딜 기획팀</td>
+				</tr>
+				<tr>
+					<td>김티몬</td>
+					<td class="tleft">[서비스기획실]딜 기획팀</td>
+				</tr>
+				<tr>
+					<td>김티몬</td>
+					<td class="tleft">[서비스기획실]딜 기획팀</td>
+				</tr>
+				<tr>
+					<td>김티몬</td>
+					<td class="tleft">[서비스기획실]딜 기획팀</td>
+				</tr>
+				</tbody>
+			</table>
+			<div class="pagingWrap">
+				<span class="numPage">
+					<a href="#" class="first">prev jump</a>
+					<a href="#" class="prev">prev</a>
+					<a href="#" class="active">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#" class="next">next</a>
+					<a href="#" class="end">next jump</a>
+				</span>
+			</div>
+		</div>
+	</div>
+	<button type="button" class="btn_close">닫기</button>
+</div>
+
+<hr class="layer-hr">
+
+<!-- 검색 전 -->
+<div class="layerPop" style="width: 400px;">
+	<div class="layer_hd">
+		<h3>대리 승인자를 선택해 주세요.</h3>
+	</div>
+	<div class="layer_ct">
+		<div class="deputy">
+			<div class="searchBar">
+				<select id="pop2">
+					<option>선택</option>
+					<option>옵션1</option>
+					<option>옵션2</option>
+					<option>옵션3</option>
+					<option>옵션4</option>
+				</select>
+				<div class="textFieldWrap search" style="width: 220px;">
+					<input type="text" required="">
+					<label class="placeholder">검색어를 입력해주세요</label>
+					<button type="button" class="btnSrch">검색</button>
+				</div>
+			</div>
+			<table class="table list small">
+				<colgroup>
+					<col style="width: 100px">
+					<col style="width: auto">
+				</colgroup>
+				<tbody>
+				<tr>
+					<td colspan="2" class="empty">대리 승인자를 검색해 주세요.</td>
+				</tr>
+				</tbody>
+			</table>
+			<div class="pagingWrap">
+				<span class="numPage">
+					<a href="#" class="active">1</a>
+				</span>
+			</div>
+		</div>
+	</div>
+	<button type="button" class="btn_close">닫기</button>
+</div>
+<!-- // 대리 승인자 선택 -->
+
+</body>
+</html>

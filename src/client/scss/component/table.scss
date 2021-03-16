@@ -1,0 +1,307 @@
+$linebgClr: getColors( 'line-bg' ) ;
+$fontClr: getColors( 'text' ) ;
+$primaryClr: getColors( 'primary' ) ;
+
+.table {
+	@mixin cellStyle( $styles: () ) {
+		$defaultStyle: (
+			height: 54px, 
+			padding: 10px, 
+			background-color: #fff, 
+			color: nth( $fontClr, 1 ), 
+			text-align: left, 
+			vertical-align: middle
+		);
+
+		@each $prop, $value in map-merge( $defaultStyle, $styles ) {
+			#{$prop} : $value;
+		}
+	}
+
+	width: 100%;
+	border-top: 2px solid nth( $linebgClr, 9 );
+	table-layout: fixed;
+	
+	> thead, > tbody, > tfoot {
+		> tr {
+			.tleft {
+				text-align: left !important;
+				padding:10px 20px ; 
+			}
+			.tcenter {
+				text-align: center !important;
+			}
+			.tright {
+				text-align: right !important;
+			}
+
+			> th, > td {
+				@include cellStyle();
+				border-bottom: 1px solid nth( $linebgClr, 5 );
+			}
+			> th {
+				@include getTypoStyles( title-14 );
+			}
+			> td {
+				@include getTypoStyles( body-13 );
+			}
+		}
+	} // > thead, > tbody, > tfoot
+
+	// LIST 형태 TABLE
+	&.list {
+		> thead {
+			> tr {
+				> th {
+					text-align: center;
+					border-bottom: 1px solid nth( $linebgClr, 1 );
+				}
+			}
+		}
+		> tbody {
+			> tr {
+				> td {
+					text-align: center;
+					color: nth( $fontClr, 2 );
+				}
+			}
+		}
+		tr {
+			th:first-child, td:first-child{
+				.chkWrap i { margin-right : 0 ; }
+			}
+		}
+		.chkWrap{
+			vertical-align:middle ;
+		}
+	} // &.list
+
+	// FORM, 내용 형태 TABLE
+	&.cont {
+		> tbody {
+			> tr {
+				> * {
+					text-align: left;
+					border-left: 1px solid nth( $linebgClr, 5 );
+					&:first-child {
+						border-left: 0 none;
+					}
+				}
+				> th {
+					padding: 21px 22px;
+					vertical-align: top;
+				}
+				> td {
+					padding: 11px 22px;
+					.inputBox {
+						display: flex;
+						align-items: center;
+						.ui-selectmenu-button {
+							margin-right: 4px;
+							&:last-child {
+								margin-right: 0;
+							}
+						}
+					}
+					ul.access_ls{
+						li{
+							margin-top: 10px;
+							&:first-child{ margin-top: 0; }
+							strong{ font-weight: bold; }
+						}
+						.dot_txt{
+							color: #a0a1a8;
+							&:before{ 
+								content:""; 
+								width: 3px; height: 3px;
+								display: inline-block; background-color: #a0a1a8;
+								vertical-align: middle; margin-right: 4px;
+							}
+							&.bold{ 
+								color: #3d3e48; font-weight: bold;
+								&:before{ background-color: #3d3e48; vertical-align: 2px; }
+							}
+						 }
+						
+						&.chk{
+							.chkWrap span{ font-weight: bold; }
+						}
+					}
+					span.date_txt{
+						display: inline-block; vertical-align: top;
+						&::after {
+							content: "";
+							width:24px; height:24px; display: inline-block;
+							background-image:url('../images/ic_calendar.svg') ;
+							vertical-align: middle; margin-left: 4px;
+						}
+					 }
+					label.vtop{ align-items: flex-start; margin-top: -5px; }
+					ul.bulletTxt {
+						margin-top: 10px;
+						li {
+							margin-top: 5px;
+							padding-left: 8px;
+							position: relative;
+							color: nth( $fontClr, 4 );
+							@include getTypoStyles( body-13 );
+	
+							&:before {
+								content: '';
+								width: 3px;
+								height: 3px;
+								display: inline-block;
+								background-color: nth( $fontClr, 4 );
+								position: absolute;
+								top: 6px; left: 0;
+							}
+						}
+					} // ul.bulletTxt
+					label.radioWrap, label.chkWrap {
+						height: 100%;
+						margin-right: 30px;
+						&:last-child {
+							margin-right: 0;
+						}
+					}
+					.innerListTbl {
+						width: 100%;
+						border-top: 1px solid nth( $linebgClr, 9 );
+						margin: 5px 0;
+						> thead, > tbody {
+							> tr {
+								> * {
+									height: 48px;
+									text-align: center;
+									border-width: 0 0 1px 1px;
+									border-style: solid;
+									border-color: nth( $linebgClr, 4 );
+									vertical-align: middle;
+									padding: 0 12px;
+									&:first-child {
+										border-width: 0 0 1px 0;
+									}
+								}
+							}
+						}
+						> thead {
+							> tr {
+								> th {
+									@include getTypoStyles( subtitle-13 );
+									background-color: nth( $linebgClr, 7 );
+								}
+							}
+						}
+						> tbody {
+							> tr {
+								> td {
+									@include getTypoStyles( body-12 );
+									color: nth( $fontClr, 2 );
+									.chkWrap i{ margin-right: 0 }
+								}
+							}
+						}
+						&.td_vtop > tbody > tr > td{ 
+							vertical-align: top !important;
+							padding: 20px 20px !important;
+						}
+					}
+					@at-root & .textFieldWrap{ vertical-align: top; }
+					@at-root .disClr{ color: nth( $fontClr , 3 ); }
+					&.hasHeight {
+						height:var( --height, 164px ) ; 
+						padding-top:21px ;  
+						vertical-align: top ;
+					}
+					.align-type1{
+						padding-top: 6px;
+						& + .sealine{ margin-top:12px ; }
+					}
+					.align-type2{
+						height:100% ; 
+					}
+				}
+			}
+		} // &.cont
+	}
+
+	&.small {
+		width: auto;
+		// 작은 LIST 형태 TABLE
+		&.list {
+			> thead, > tbody {
+				> tr {
+					* {
+						height: 40px;
+						text-align: center;
+						border-left: 1px solid nth( $linebgClr, 5 );
+						&:first-child {
+							border-left: 0 none;
+						}
+					}
+					.calendarWrap{ 
+						border:1px solid #d6dadf ; 
+						height: 38px ; 
+						input { height : 36px; }
+						button { border-left:0; height : 36px; }
+					}
+				}
+			}
+			> thead {
+				> tr {
+					> th {
+						border-bottom: 1px solid nth( $linebgClr, 1 );
+					}
+				}
+			}
+			> tbody {
+				> tr {
+					> td {
+						text-align: center;
+						@include getTypoStyles( body-12 );
+					}
+				}
+			}
+		} // &.list
+
+		&.cont {
+			> tbody {
+				> tr {
+					> th {
+						padding: 21px 16px;
+						vertical-align: top;
+					}
+					> td {
+						padding: 11px 16px;
+					}
+				}
+			} // &.cont
+		}
+	}
+
+	@at-root .btnsWrap {
+		display: flex ;
+		justify-content: center ;
+		margin-top: 40px;
+		margin-bottom: 55px;
+		&:last-of-type{ margin-bottom: 0; }
+		> *{ margin:0 4px ; }
+	}
+	@at-root .tblTitle {
+		@include getTypoStyles( title-16 ) ;
+		margin-top: 30px;
+		margin-bottom: 14px;
+		font-weight: bold;
+		line-height: 20px;
+		display: flex;
+		align-items: center;
+
+		/* 타이틀 내부 우측 정렬인 컨텐츠 */
+		.r-cont {
+			flex: auto 1;
+			display: inline-flex;
+			align-items: center;
+			justify-content: flex-end;
+		}
+	}
+}

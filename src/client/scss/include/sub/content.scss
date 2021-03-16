@@ -1,0 +1,126 @@
+$linebgClr: getColors( 'line-bg' ) ;
+$fontClr: getColors( 'text' ) ;
+$primaryClr: getColors( 'primary' ) ;
+
+.contents {
+	> section {
+		h1 {
+			display: flex;
+			@include getTypoStyles( head-24 );
+			color: nth( $fontClr, 1 );
+			margin-bottom: 35px;
+			em { color: nth( $primaryClr, 1 ); }
+			& + .bx_srch {
+				margin-top:-30px ; 
+			}
+		} // h1
+
+		.round-cont {
+			$gap-horizon-half: 20px;
+
+			margin-top: 25px;
+			border: 1px solid nth( $linebgClr, 4 );
+
+			@include borderRoundingBox ( 4px, ($gap-horizon-half * 2) 0 ) ;
+
+			.inputs, .inner-inputs {
+				display: flex;
+				flex-wrap: wrap;
+				padding: 0 $gap-horizon-half;
+				
+				li {
+					display: flex;
+					flex-direction: column;
+					flex: 1 50%;
+					margin: 10px 0;
+					padding: 0 $gap-horizon-half;
+					
+					&.one-line-half {
+						flex: 1 100%;
+						padding-right: calc( 50% + #{ $gap-horizon-half } );
+					}
+
+					.input-label {
+						@include getTypoStyles( subtitle-13 );
+						color: nth( $fontClr, 4 );
+						display: flex;
+						margin: 5px 0 10px 0;
+						.bullet-require {
+							color: nth( $primaryClr, 1 );
+							margin-left: 5px;
+						}
+					}
+
+					.input-box {
+						display: flex;
+						flex-direction: row;
+						> button {
+							min-width: 108px;
+							padding: 0 10px;
+							margin-left: 6px;
+						}
+					}
+
+					.input-msg {
+						@include getTypoStyles( body-13 );
+						color: nth( $fontClr, 3 );
+						margin-top: 7px;
+					}
+				} // li
+
+				&.passwords {
+					background-color: #f4f4f4;
+					margin: 15px 0 10px 0;
+					padding: 13px $gap-horizon-half 20px $gap-horizon-half;
+					border: {
+						width: 1px 0 1px 0;
+						style: solid;
+						color: nth( $linebgClr, 4 );
+					}
+
+					.input-label {
+						color: nth( $fontClr, 2 );
+					}
+
+					&.hide {
+						display: none;
+					}
+				} // &.passwords
+			}
+			&.init{ 
+				margin-top: 0; padding: 0; border: 0; 
+				.inputs{ 
+					padding: 0; 
+					li{
+						&:nth-child( odd ){ padding:0 8px 0 0 ; }
+						&:nth-child( even ){ padding: 0 0 0 7px ; }
+					}
+				}
+			}
+		} // .round-cont
+
+		.tab-round{
+			& + .round-cont {
+				padding-top:34px ; 
+			}
+		}
+
+		.btn-area {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 40px 0 0;
+			button, a {
+				margin: 0 3px;
+			}
+		} // .btn-area
+
+		.bx_srch{
+			display: flex ; 
+			justify-content: flex-end;
+			margin-bottom: 15px ;
+			> * { margin-left: 6px ; }
+		} // .bx_srch
+
+	} // > section
+}

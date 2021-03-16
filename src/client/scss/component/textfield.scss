@@ -1,0 +1,110 @@
+.textFieldWrap{
+  $width : var( --width , 100% ) ;
+  $height : var( --height , 36px ) ;
+  $borderRadius: 4px ;
+  $gap : 15px ; 
+  $clrs-lineBg : getColors( 'line-bg' ) ; 
+  $clrs-primary : getColors( 'primary' ) ; 
+  $clrs-text : getColors( 'text' ) ; 
+  display:inline-flex ;   
+  width:$width ; 
+  position:relative ; 
+  background-color: nth( $clrs-lineBg , 8 );
+  vertical-align: middle ; 
+  border-radius: 4px ;
+  * {
+    display:inline-flex ; 
+    box-sizing:border-box ; 
+    @include getTypoStyles( body-13 ) ;
+  }
+  [type=text], [type=search], [type=password], .placeholder {
+    align-items: center ;
+    height : $height ;
+    padding:0 $gap ; 
+    background-color:transparent ;
+    border:1px solid nth( $clrs-lineBg, 4 ) ; 
+  }
+  [type=text], [type=search], [type=password], textarea {
+    position:relative ; 
+    width:100% ; 
+    color : nth( $clrs-text , 1 ) ; 
+    border-radius: 4px ;
+    z-index: 2 ; 
+    &:focus { border-color: nth( $clrs-primary, 1 ) ; }
+    &:valid {
+      border-color: nth( $clrs-primary, 1 ) ;
+      & ~ .placeholder { display: none ; }
+      & ~ .btnDel, & ~ .btnSrch { display: block ;}
+    }    
+  }
+  .placeholder {
+    position:absolute ;
+    left:0 ; top:0 ; right: 0 ; bottom: 0 ; 
+    color : nth( $clrs-text , 4 ) ;   
+    border-color: transparent ; 
+    height: 100%;
+  }
+  textarea{
+    $txtareaHeight : var( --height , 108px ) ;
+    min-height: $txtareaHeight ; 
+    padding: $gap ;    
+    border:1px solid nth( $clrs-lineBg, 4 ) ; 
+    background-color:transparent ;
+    outline:0 ;
+    resize: none ;
+    & ~ .placeholder {
+      line-height:15px ; 
+      height: auto;
+      bottom: auto; top: $gap;
+    }
+  }
+  
+  &.disabled{    
+    [type=text], [type=search], [type=password], textarea { 
+      color:nth( $clrs-text , 4 ) ; 
+      background-color:nth( $clrs-lineBg , 7 ) ;
+    }
+    [type=text][value] ~ .placeholder { visibility: hidden; }
+
+  }
+  &.hasDel {
+    [type=text] { padding-right: $height ; }
+    .btnDel {
+      display:none ; 
+      width:12px ; height:12px ; 
+      position:absolute ; 
+      right:16px ; top:50% ; 
+      background-image:url('../images/ic_delete.svg') ;
+      transform: translateY( -50% );
+      font-size:0; 
+      z-index: 3;
+    }
+  }
+  &.search {
+    [type=text], [type=search], [type=password] {
+      padding-right: 44px ;
+      &:valid ~ .btnSrch, &:focus ~ .btnSrch { &::after{ background-image:url('../images/ic_srch_active.svg') ; } }
+      &:disabled ~ .btnSrch { &::after{ background-image:url('../images/ic_srch_disabled.svg') ; } }
+    }
+    .btnSrch {
+      width:$height ; height:$height ; 
+      position:absolute ; 
+      right:3px ; top:0 ; 
+      &::after {
+        content:"";
+        display:block; 
+        width:21px ; height: 21px ; 
+        position:absolute; 
+        left: 50% ; top: 50% ;
+        background-image:url('../images/ic_srch.svg') ;
+        transform: translate( -50%, -50% );
+      }
+      font-size:0; 
+      z-index: 3;
+    }
+    &.hasDel{
+      [type=text], [type=search], [type=password] { padding-right: 60px ; }
+      .btnDel { right:44px ; }
+    }
+  }
+}

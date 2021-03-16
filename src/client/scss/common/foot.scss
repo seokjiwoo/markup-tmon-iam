@@ -1,0 +1,11 @@
+$clrs-text : getColors('text');
+footer {
+  display: flex ;
+  justify-content: flex-end;
+  padding-bottom:60px ;
+  .copyright {
+    @include getTypoStyles( body-12 ) ;
+    color:nth( $clrs-text , 5 ) ;
+    letter-spacing: -.1px;
+  }
+}

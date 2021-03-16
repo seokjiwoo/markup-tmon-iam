@@ -1,0 +1,64 @@
+.pagingWrap{
+  $paging-line-bg : getColors('line-bg');
+  $paging-text : getColors('text');
+  $paging-primary : getColors('primary');
+
+  display: flex; justify-content: center; 
+  span.numPage{
+    display: inline-flex;
+    position: relative; 
+    margin: 0 66px; 
+
+    > a {
+      $arrow-svg : ico-arrow;
+      $pageNationBtn  : (
+        'first' : ( $arrow-svg , (left : -68px )) , 
+        'prev' : ( $arrow-svg , (left : -37px )) , 
+        'next' : ( $arrow-svg , (right : -39px)) , 
+        'end' : ( $arrow-svg , (right : -70px)) , 
+      ); 
+
+      display: inline-flex;
+      justify-content: center;align-items: center;
+      height: 26px; padding: 0 8px;
+      border-radius: 4px; box-sizing: border-box;
+      @extend .fz-elem3; color: nth( $paging-text , 1 );
+      margin: 0px 2px;
+
+      &:hover , &.active { color: nth( $paging-primary , 1 ) }
+      &.next, &.end{ transform: rotate( 180deg ); }
+      &.prev , &.next{
+        &:before{ left: 50%; transform: translateX( -50% ) }
+        &:after{ display: none; }
+      }
+      &.first , &.end{
+        &:before , &:after{ left: 50%; }
+        &:before{ transform: translateX( calc( -50% - 2px)) }
+        &:after{ transform: translateX( calc( -50% - -2px)) }
+      }
+
+      @each $key , $value in $pageNationBtn {
+        &.#{ $key } {
+          position: absolute; top: 0; 
+          width: 26px; font-size: 0; border: 1px solid #E3E5E8;
+          $styles : nth( $value , 2 ) ; 
+          $bg : nth( $value , 1 ) ; 
+          @each $key , $value in $styles {
+            #{ $key } : $value ;
+            &:before , &:after{
+              content:""; 
+              position: absolute; top:0;
+              width: 8px; height: 26px; overflow: hidden;
+              background-image: url("../images/#{$bg}.svg");
+              background-position: -8px 0;
+            }
+            &:hover{
+              &:before , &:after{ filter: invert(48%) sepia(100%) saturate(683%) hue-rotate(339deg) brightness(100%) contrast(91%) }
+            }
+          }
+        } // end of key 
+      } // end of pageNationBtn
+      
+    } // end of a
+  } // end of numPage
+}  // end of pagingWrap

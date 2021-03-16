@@ -1,0 +1,203 @@
+@import './common/reset' ;
+@import './common/variables' ;
+@import './common/comm' ;
+
+/* 컴포넌트 */
+@import './component/calendar' ;
+@import './component/check' ;
+@import './component/radio' ;
+@import './component/textfield' ;
+@import './component/btn' ;
+@import './component/label' ;
+@import './component/tab' ;
+@import './component/paging' ;
+@import './component/table' ;
+@import './component/slctbox' ;
+@import './component/layerPop' ;
+
+
+/* 샘플페이지 용 스타일 */
+body.page_sample{
+  header {
+    margin: 0 ;
+    padding: 40px ; 
+    background-color: #444;
+    color:#fff ; 
+    letter-spacing: -1px ;
+    h1{
+      font-size:24px;
+      font-weight: 700 ; 
+      margin-bottom: 5px ;
+    }
+    p {
+      font-size:14px ; 
+      color:#afafaf ; 
+    }
+  }
+  &::before {
+    content: '';
+    display: block;
+    background: #fff;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 5px;
+    bottom: 20px;
+    z-index: 11;
+  }
+}
+dl.bxSample {
+  border: 1px solid #000; 
+  padding: 40px; 
+  border-radius: 10px; 
+  position: relative; 
+  dt {
+    position: absolute; 
+    left: 20px; top: -15px; 
+    display: flex; 
+    align-items: center; 
+    height: 30px; 
+    background-color: #fff; 
+    padding: 0 20px; 
+    font-weight: 600; 
+  }
+  dd {
+    a.exp { font-size: 13px; color: #555; font-weight: 600; background-color: #ffdbe1; }
+    a.exp:before {
+      color: #888; 
+      content: '확인용 제플린 가이드 : '; 
+      margin-right: 10px; 
+      background-color: #fff; 
+    }
+    > * {
+      margin: 10px 0;
+    }
+    > h3 {
+      margin-top: 30px; 
+      margin-bottom: 5px; 
+      font-weight: 600; 
+      text-decoration: underline; 
+      color: #f60; 
+      font-size: 15px; 
+    }
+  }
+}
+.mockup {
+  min-height:30px; 
+  margin-bottom: 30px ; 
+  font-size: 14px; 
+  display: inline-flex; 
+  cursor: pointer; 
+  outline: none; 
+  background-color: #fff; 
+  flex-direction: column; 
+  position: relative; 
+  > input {
+    width: 0; height: 0; 
+    &:after {
+      content: attr( data-exp ); 
+      min-width: 100px; 
+      height: 30px; display: flex; 
+      align-items: center; 
+      border: 1px solid #ccc; 
+      justify-content: center; 
+      padding: 0 10px; 
+      cursor: pointer; 
+      border-radius: 10px; 
+    }
+    &:checked ~ ul {
+      display: block; 
+      background-color: #fff; 
+      border-radius: 10px; 
+      margin-top: calc( 30px + 5px ); 
+    }
+  }
+  > h3 { display: flex; align-items: center; justify-content: center; height: 30px; padding: 0 10px; border: 1px solid #999; } 
+  ul {
+    display: none; 
+    border: 1px solid #ccc; 
+    > li {
+      display: flex; align-items: center; 
+      padding: 0 10px; 
+      height: 30px; 
+      a {
+        color: #555; 
+        display: flex; 
+        width: 100%; 
+        min-height: 30px; 
+        align-items: center; 
+        &:hover { background-color: #eee; }
+      }
+    }
+  }
+  .top {
+    display: flex; 
+    position: fixed; 
+    right: 5px; bottom: 20px; 
+    z-index: 10; 
+    width: 30px; height: 30px; 
+    align-items: center; justify-content: center; 
+    background-color: #f60; 
+    color: #fff; 
+    * { color: inherit; }
+  }
+}
+.wrapSample{
+  $height-tab : 40px ;
+  $clr-active : indianred ; 
+  position:relative ; 
+  display:grid ; 
+  grid-template-rows: $height-tab 1fr;
+  justify-content: flex-start;
+  padding-left:20px ; 
+  &::after{
+    content:""; 
+    display:flex ; 
+    width:100% ; height:$height-tab ; 
+    background-color:#f9f9f9;
+    border-bottom:1px solid #eceded ; 
+    position:absolute; left:0 ; top:0 ; 
+    z-index:1 ;
+  }
+  input.hiddenRadio {
+    position: absolute;
+    visibility: hidden;
+    &:checked + label.btnTabs{
+      font-weight: 700 ; 
+      color:#333 ; 
+      &::after{ display: inline-flex ; }
+    }
+    &:checked + label.btnTabs + section { display: block ; }
+  }
+  label.btnTabs {
+    position:relative;
+    display: flex ; 
+    grid-row: 1/span 1 ;
+    padding:0 20px ; 
+    align-items: center ; 
+    margin-right: -1px ;
+    cursor: pointer;
+    z-index:10 ; 
+    color:#777 ; 
+    &:after{
+      content: "";
+      display: none;
+      border: 4px solid #444;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-bottom-width: 0;
+      position: absolute;
+      left : 50% ; top: 0;
+      transform: translateX(-50%);
+    }
+  }
+  > section{
+    display:none ; 
+    grid-row: 2 / span 1;
+    position: absolute;
+    width: 100%;
+    padding: 40px;
+    > dl { margin-bottom: 40px ; }
+  }
+}

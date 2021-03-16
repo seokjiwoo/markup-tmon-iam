@@ -1,0 +1,61 @@
+$linebgClr: getColors( 'line-bg' ) ;
+$fontClr: getColors( 'text' ) ;
+$primaryClr: getColors( 'primary' ) ;
+
+$loginFootSize : 65px;
+.login_container {
+	grid-column: 1 / -1;
+	grid-row: 2 / -1;
+	background: {
+		image: url('../images/bg_login.jpg');
+		repeat: no-repeat;
+		position: 50% 50%;
+	}
+	padding-bottom: $loginFootSize;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.login_box {
+		width: 420px;
+		height: 330px;
+		border-radius: 6px;
+		background-color: nth( $linebgClr, 8 );
+
+		h3.title {
+			@include getTypoStyles("head-28");
+			text-align: center;
+			color: nth( $fontClr, 1 );
+			margin-top: 40px;
+			& + .desc {
+				@extend .fz-elem1;
+				line-height: 27px;
+				text-align: center;
+				color: nth( $fontClr, 1 );
+				margin-top: 6px;
+			}
+		}
+
+		.inputs {
+			margin: 23px 30px 0 30px;
+			> li {
+				&:not(:first-child) { margin-top: 10px; }
+				button { width: 100%; height: 50px; }
+			}
+		}
+	}
+
+	& + footer {
+		height: $loginFootSize;
+		margin-top: -$loginFootSize;
+		padding: 0;
+		
+		p {
+			height: 22px;
+			color: nth( $fontClr, 6 );
+			letter-spacing: 0;
+			opacity: .7;
+			line-height: 22px;
+		}
+	}
+}

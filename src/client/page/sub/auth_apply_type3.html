@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>업무 권한 신청</title>
+  <script src="../../js/lib/jquery-1.12.4.min.js"></script>
+  <script src="../../js/lib/jquery-ui.js"></script>
+</head>
+<body class="sub">
+
+  <div class="wrap">
+    
+    ${ require( '../include/head.html' )()}  
+    
+    <div class="container">
+      
+      ${ require( '../include/visual.html' )()}  
+      
+      <nav class="lnb">
+        ${ require( '../include/menu_default.html' )({ menu3 : 'active' })}
+        ${ require( '../include/menu_toggle.html' )( { visibility : 'show' } )}
+      </nav>
+
+      <main class="contents">
+        <section>
+          <h1>업무 권한 신청</h1>
+          <table class="table cont">
+            <colgroup>
+              <col style="width: 160px">
+              <col style="width: auto">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th rowspan="2">신청 대상</th>
+                <td>
+                    <label class="radioWrap">
+                    <input type="radio" name="group1">
+                    <i></i><span>본인</span>
+                    </label>
+                    <label class="radioWrap">
+                    <input type="radio" name="group1" checked>
+                    <i></i><span>대리신청</span>
+                    </label>
+                    <div class="textFieldWrap search hasDel" style="--width:200px;">
+                    <input type="text" required disabled>
+                    <label class="placeholder">검색어를 입력해주세요</label>
+                    <button type="button" class="btnDel">삭제</button>
+                    <button type="button" class="btnSrch">검색</button>
+                    </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <label class="chkWrap">
+                        <input type="checkbox" checked>
+                        <i></i><span>기존 사용자 권한 복사</span>
+                    </label>
+                    <div class="textFieldWrap search hasDel" style="--width:200px;">
+                        <input type="text" required>
+                        <label class="placeholder">검색어를 입력해주세요</label>
+                        <button type="button" class="btnDel">삭제</button>
+                        <button type="button" class="btnSrch">검색</button>
+                    </div>
+                </td>
+              </tr>
+              <tr>
+                <th>권한 종류</th>
+                <td>
+                  <label class="radioWrap">
+                    <input type="radio" name="group2" checked>
+                    <i></i><span>ADMIN</span>
+                  </label>
+                  <label class="radioWrap">
+                    <input type="radio" name="group2">
+                    <i></i><span>FNSTAT</span>
+                  </label>
+                  <label class="radioWrap">
+                    <input type="radio" name="group2">
+                    <i></i><span>VPN</span>
+                  </label>
+                  <label class="radioWrap">
+                    <input type="radio" name="group2">
+                    <i></i><span>외주용 VPN</span>
+                  </label>
+                  <label class="radioWrap">
+                    <input type="radio" name="group2">
+                    <i></i><span>IPCC</span>
+                  </label>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="btnsWrap">
+            <button class="btn type3 lg">조회</button>
+          </div>
+          <table class="table cont">
+            <colgroup>
+              <col style="width: 160px">
+              <col style="width: auto">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>상세권한 선택</th>
+                <td>
+                  <table class="innerListTbl td_vtop">
+                    <colgroup>
+                      <col style="width:60px;">
+                      <col style="width:200px;">
+                      <col style="width:auto;">
+                      <col style="width:170px;">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th>코드</th>
+                        <th>권한 명</th>
+                        <th>만료일</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                            <label class="chkWrap vtop">
+                                <input type="checkbox" checked>
+                                <i></i>
+                            </label>
+                        </td>
+                        <td>VPN</td>
+                        <td class="tleft">
+                            <ul class="access_ls chk">
+                                <li>VPN 권한 신청</li>
+                                <li>
+                                    <label class="chkWrap">
+                                        <input type="checkbox" checked>
+                                        <i></i><span>개발 환경 접근 필요</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="chkWrap">
+                                        <input type="checkbox" checked>
+                                        <i></i><span>BI 시스템 사용</span>
+                                    </label>
+                                </li>
+                                <li class="dot_txt">선택 항목이 담당 업무와 무관한 경우, 신청이 반려 될 수 있습니다.</li>
+                            </ul>
+                        </td>
+                        <td><span class="date_txt">2020.04.01</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th>신청사유</th>
+                <td>
+                  <div class="textFieldWrap">
+                    <textarea required style="--height:146px"></textarea>
+                    <label class="placeholder">입력해주세요</label>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="btnsWrap">
+            <button class="btn type2 lg">초기화</button>
+            <button class="btn type3 lg">신청</button>
+          </div>
+        </section>
+      </main> <!-- end of contents -->
+    </div> <!-- end of container -->
+
+    ${ require( '../include/foot.html' )()}
+
+  </div> <!-- end of wrap -->
+</body>
+</html>

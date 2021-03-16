@@ -1,0 +1,168 @@
+.tab{
+  $tab-line-bg : getColors('line-bg');
+  $tab-text : getColors('text');
+  $tab-primary : getColors('primary');
+  $active : 'active';
+ 
+  &-basic{
+    display: flex;
+    border: 1px solid nth( $tab-line-bg , 4 );
+    li{
+      position: relative;
+      flex-grow: 1; flex-shrink: 1; flex-basis: 0;
+      border-right:1px solid nth( $tab-line-bg , 4 );
+      &:last-child{ border-right:0; }
+      &:after{
+        content: "";
+        position: absolute; left:-1px; top:-1px;
+        width: calc(100% + 2px); height: calc( 100% + 2px );
+        display: none;
+      }
+      a{
+        display: flex;
+        align-items: center; justify-content:center;
+        height: 48px; padding: 0 24px; 
+        letter-spacing: -0.48px; @extend .fw-bold;
+        color: nth( $tab-text , 1 );
+      }
+      &.#{ $active }{
+        &:after{ display: block; background-color: nth( $tab-primary , 1 ); }
+        a{ position:relative; z-index:1; color: nth( $tab-line-bg , 8 ); }
+      }
+    }
+  } // end of tab-basic
+
+  &-round{
+    border-bottom: 1px solid nth( $tab-line-bg , 4 ); font-size: 0;
+    li{
+      position: relative;
+      display: inline-flex; margin-left: 5px;
+      border: 1px solid nth( $tab-line-bg , 4 ); border-bottom: 0;
+      @include bdrRadiusStyle( 4px , 4px, 0 , 0 );
+      &:first-child{ margin-left:0; }
+
+      a{
+        display: inline-flex;justify-content: center;
+        min-width: 140px; height: 50px;
+        padding: 0 24px; box-sizing: border-box;
+        align-items: center; color: nth( $tab-text , 1 );
+        @include getTypoStyles( title-14 ) ;
+        font-family: $font-nanum;
+      }
+
+      &.#{$active}{ 
+        border-color: nth( $tab-primary , 1 );  
+        a{ color :nth( $tab-primary , 1 ) }
+        &:after{
+          content:"";
+          position: absolute;
+          left:0; right:0; bottom: -1px;
+          height: 1px; background-color: nth( $tab-line-bg , 8 );
+        }
+      }
+    }
+  } // end of tab-round
+
+  &-sub{
+    border-bottom: 1px solid nth( $tab-line-bg , 5 );
+    font-size: 0;
+    li{
+      position: relative; display: inline-flex;
+      &:after{
+        content:"";
+        position: absolute; top:50%; right:0;
+        transform: translateY( -50% );
+        width: 1px; height: 13px; 
+        display:block; background-color: #d8d8d8;
+      }
+      &:last-child:after{ display: none; }
+      a{
+        position: relative;
+        min-width: 88px; height: 60px;
+        display: inline-flex;
+        align-items: center; justify-content: center; 
+        @extend .fz-elem2; @extend .fw-bold;
+        color: nth( $tab-text , 1 );
+        &:after{
+          content:"";
+          position: absolute; left:0; right:0; bottom: -1px;
+          height: 2px; display: none;
+          background-color: nth( $tab-primary , 1 );
+        }
+      }
+
+      &.#{$active}{
+        a{ 
+          color: nth( $tab-primary , 1 );
+          &:after{ display: block; }
+        }
+      }
+    }
+  } // end of tab-sub
+  
+  &-step{
+    display: flex; font-size: 0;
+    li{
+      position: relative;
+      flex-grow: 1; flex-shrink: 1; flex-basis: 0;
+
+      &:first-child{
+        a{
+          padding-left: 24px;
+          @include bdrRadiusStyle( 4px , 0 , 0 , 4px) 
+        }
+      }
+      &:last-child{
+        .arr{ display: none; }
+        a{ 
+          @include bdrRadiusStyle( 0 , 4px , 4px , 0) 
+          &:after{ right: 17px; }
+        }
+      }
+
+      .arr {
+        position: absolute; right: -24px; top: 0; 
+        width: 28px; height: 56px; 
+        display: block;  overflow: hidden;
+        background-color: #ccc; 
+        &:after{
+          content:"";
+          position: absolute; z-index: 1;
+          top: 50%; left: 50%; right: -24px;
+          width: 100px; height: 100px;
+          display: block; background: nth( $tab-line-bg , 5 );
+          transform: rotate(52deg) skew( 12deg ) translateX(-110px) translateY(48px);
+          border: 1px solid nth( $tab-line-bg , 8 ); border-radius: 4px;
+        }
+      }
+      
+      a{
+        display: flex; align-items: center; box-sizing: border-box;
+        height: 56px; padding: 0 42px 0 48px; background-color: nth( $tab-line-bg , 5 );
+        @extend .fw-bold; @extend .fz-elem1; font-family: $font-nanum; color: nth( $tab-text , 1 );
+        span{ padding-left: 6px; }
+
+        &:before{ content : attr( data-step ); padding-right: 4px; }
+        &:after{
+          content:"";
+          position: absolute; top: 50%; right: -3px;
+          transform: translateY( -50% );
+          width: 44px; height: 44px; display: block;
+          background: {
+            position: 0 0;
+            image : url('../images/arrow-open.svg');
+          }
+        }
+      }
+      
+      &.#{$active}{
+        .arr:after{ background-color: nth( $tab-primary , 1 ); }
+        a{ 
+          background-color: nth( $tab-primary , 1 ); color: nth( $tab-line-bg , 8 );
+          &:after{ background-image: url('../images/arrow-close.svg') }
+        }
+      }
+    }
+  } // end of tab-step
+
+} // end of tab
